@@ -13,7 +13,7 @@ Follow our project development on [Trello](https://trello.com/b/nT3OJqwE)
 
 
 ##Technologies Used
-Project built using: [Express](http://expressjs.com/en/index.html) [JQuery](https://jquery.com/) [JavaScript](https://www.javascript.com/) [MongoDB](https://www.mongodb.com/), and good 'ole pen and paper.
+Project built using: [Express](http://expressjs.com/en/index.html), [JQuery](https://jquery.com/), [JavaScript](https://www.javascript.com/), [MongoDB](https://www.mongodb.com/), and good 'ole pen and paper.
 
 Will include mapbox or google maps here as well depending on API we use.
 
