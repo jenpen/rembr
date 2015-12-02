@@ -1,0 +1,26 @@
+{
+  "name": "rembr",
+  "version": "0.0.1",
+  "description": "Memory documentation application. Users can post and view memories based on their current location.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenpen/rembr.git"
+  },
+  "author": "Kelly Austin, Brendan Lewis, Jen Pengelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenpen/rembr/issues"
+  },
+  "homepage": "https://github.com/jenpen/rembr#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "kerberos": "0.0.17",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.2.9"
+  }
+}
