@@ -10,6 +10,10 @@ var UserSchema = new Schema (
   }
 );
 
+// UserSchema.virtual("id").get(function(){
+//   return this._id;
+// });
+
 var MemorySchema = new Schema (
   {
     title: String,
@@ -24,3 +28,6 @@ var MemorySchema = new Schema (
     toJSON: {virtuals: true}
   }
 );
+
+var MemoryModel = mongoose.model("Memory", MemorySchema);
+var UserModel = mongoose.model("User", UserSchema);
