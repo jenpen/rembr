@@ -1,5 +1,4 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/rembr");
 
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;

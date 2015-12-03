@@ -21,6 +21,8 @@ describe ("A memory", function(){
   it("should include text", function (){
     expect(wedding.text).toBeDefined();
   });
+
+
   it("should be able to be edited", function(){
     var wedding = new Memory ("Kris and Jen's Wedding");
 
