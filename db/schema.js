@@ -1,17 +1,18 @@
 var mongoose = require("mongoose");
+var bcrypt   = require('bcrypt-nodejs');
+
 
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
-// var UserSchema = new Schema (
-//   {
-//     memory: [{type: ObjectId, ref: "Memory"}]
-//   }
-// );
 
-// UserSchema.virtual("id").get(function(){
-//   return this._id;
-// });
+var UserSchema = new Schema(
+  {
+    email: String,
+    password: String,
+    memories: [{type: ObjectId, ref: "Memory"}]
+  }
+)
 
 var MemorySchema = new Schema (
   {
@@ -20,7 +21,7 @@ var MemorySchema = new Schema (
     latitude: Number,
     date: { type: Date, default: Date.now },
     text: String,
-    // user: {type: ObjectId, ref: "User"}
+    user: {type: ObjectId, ref: "User"}
   },
   {
     toObject: {virtuals: true},
@@ -29,4 +30,4 @@ var MemorySchema = new Schema (
 );
 
 var MemoryModel = mongoose.model("Memory", MemorySchema);
-// var UserModel = mongoose.model("User", UserSchema);
+var UserModel = mongoose.model("User", UserSchema);
