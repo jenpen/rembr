@@ -12,7 +12,7 @@ var UserSchema = new Schema(
     password: String,
     memories: [{type: ObjectId, ref: "Memory"}]
   }
-)
+);
 
 var MemorySchema = new Schema (
   {

@@ -1,9 +1,21 @@
 require("./schema");
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/rembr")
+mongoose.connect("mongodb://localhost/rembr");
 var MemoryModel = require("../models/memory");
+// var UserModel = require("../models/user");
 // var userData = require("./user_data");
 // var memoryData = require("./memory_data");
+
+
+var userOne = new UserModel({
+  email: "one@one.com",
+  password: "oneoneone",
+});
+
+var userTwo = new UserModel({
+  email: "one@one.com",
+  password: "oneoneone",
+});
 
 var mem1 = new MemoryModel({
   title: "mem1",
@@ -12,11 +24,41 @@ var mem1 = new MemoryModel({
   text:"No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother."
 });
 
-mem1.save(function(err){
-  if(err){
-    console.log(err)
-  }
-})
+var mem2 = new MemoryModel({
+  title: "mem2",
+  latitude: 2,
+  longitude: 2,
+  text:"Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother."
+});
+
+var mem3 = new MemoryModel({
+  title: "mem3",
+  latitude: 3,
+  longitude: 3,
+  text:"No! The cat shelter's on to me. For one beautiful night I knew what it was like to be a grandmother."
+});
+
+var mem4 = new MemoryModel({
+  title: "mem4",
+  latitude: 4,
+  longitude: 4,
+  text:"For one beautiful night I knew what it was like to be a grandmother."
+});
+
+var users = [userOne, userTwo];
+var memories = [mem1, mem2, mem3, mem4];
+
+for(var i = 0; i < users.length; i++) {
+  users[i].memories.push(memories[i], memories[i+2]);
+
+  users[i].save(function(err) {
+    if (err){
+      console.log(err);
+    } else {
+      console.log("user was saved");
+    }
+  })
+}
 // mem1.save(function(err, docs){
 //   console.log("Memory was saved")
 //   console.log(docs);
@@ -67,7 +109,7 @@ mem1.save(function(err){
 // //         return new user(userDatum).save().then(function(user){
 // //           return forEach(memoryData[user.name], function(memoryDatum){
 // //             memory = new memory(memoryDatum);
-// //             console.log(user.name + " sings " + memory.title);
+// //             console.log(user.name + " rembrs " + memory.title);
 // //             memory.user = user;
 // //             return memory.save().then(function(memory){
 // //               user.memorys.push(memory);
