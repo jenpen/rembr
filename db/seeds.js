@@ -2,7 +2,7 @@ require("./schema");
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/rembr");
 var MemoryModel = require("../models/memory");
-// var UserModel = require("../models/user");
+var UserModel = require("../models/user");
 // var userData = require("./user_data");
 // var memoryData = require("./memory_data");
 
