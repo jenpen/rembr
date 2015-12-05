@@ -12,8 +12,8 @@ function postSignup(request, response) {
      failureRedirect : '/signup',
      failureFlash : true
    });
-   console.log("this is happening")
    return signupStrategy(request, response);
+
  }
 
 // GET /login
