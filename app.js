@@ -2,17 +2,20 @@ var express = require("express");
 var app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
-var mongoose = require("mongoose")
-var perspectivesController = require("./controllers/perspectivesController")
+
+var mongoose = require("mongoose");
+var perspectivesController = require("./controllers/perspectivesController");
+
 var passport     = require('passport');
 var flash        = require('connect-flash');
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
-var usersController = require("./controllers/usersController")
-app.set("view engine", "hbs")
-var conn = mongoose.connect("mongodb://localhost/rembr")
-var env          =require("./config/env.js")
+var usersController = require("./controllers/usersController");
+app.set("view engine", "hbs");
+var conn = mongoose.connect("mongodb://localhost/rembr");
+var env          =require("./config/env.js");
+
 
 
 app.use(express.static(path.join(__dirname,"/public")));
@@ -36,6 +39,7 @@ app.listen(7812,function(){
   console.log("Listening on port 7812");
 });
 
-app.get("/", perspectivesController.index)
-app.get("/signup", usersController.getSignup)
-app.post("/signup", usersController.postSignup)
+app.get("/", perspectivesController.index);
+app.get("/signup", usersController.getSignup);
+app.post("/signup", usersController.postSignup);
+>>>>>>> 7f5cce8702700c759ad87bd476b77974888fc453
