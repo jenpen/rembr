@@ -1,5 +1,5 @@
 # rembr
-Users can post and view memories based on their current location.
+Users can post and view perspectives based on their current location.
 
 ##Summary:
 

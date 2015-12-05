@@ -1,10 +1,10 @@
 require("./schema");
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/rembr");
-var MemoryModel = require("../models/memory");
+var PerspectiveModel = require("../models/perspective");
 // var UserModel = require("../models/user");
 // var userData = require("./user_data");
-// var memoryData = require("./memory_data");
+// var perspectiveData = require("./perspective_data");
 
 
 var userOne = new UserModel({
@@ -17,28 +17,28 @@ var userTwo = new UserModel({
   password: "oneoneone",
 });
 
-var mem1 = new MemoryModel({
+var mem1 = new PerspectiveModel({
   title: "mem1",
   latitude: 1,
   longitude: 1,
   text:"No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother."
 });
 
-var mem2 = new MemoryModel({
+var mem2 = new PerspectiveModel({
   title: "mem2",
   latitude: 2,
   longitude: 2,
   text:"Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother."
 });
 
-var mem3 = new MemoryModel({
+var mem3 = new PerspectiveModel({
   title: "mem3",
   latitude: 3,
   longitude: 3,
   text:"No! The cat shelter's on to me. For one beautiful night I knew what it was like to be a grandmother."
 });
 
-var mem4 = new MemoryModel({
+var mem4 = new PerspectiveModel({
   title: "mem4",
   latitude: 4,
   longitude: 4,
@@ -46,10 +46,10 @@ var mem4 = new MemoryModel({
 });
 
 var users = [userOne, userTwo];
-var memories = [mem1, mem2, mem3, mem4];
+var perspectives = [mem1, mem2, mem3, mem4];
 
 for(var i = 0; i < users.length; i++) {
-  users[i].memories.push(memories[i], memories[i+2]);
+  users[i].perspectives.push(perspectives[i], perspectives[i+2]);
 
   users[i].save(function(err) {
     if (err){
@@ -60,32 +60,32 @@ for(var i = 0; i < users.length; i++) {
   })
 }
 // mem1.save(function(err, docs){
-//   console.log("Memory was saved")
+//   console.log("Perspective was saved")
 //   console.log(docs);
 // });
-// var mem2 = new MemoryModel("mem2", {}, 2, 2,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
+// var mem2 = new PerspectiveModel("mem2", {}, 2, 2,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
 // mem2.save(function(err){
-//   console.log("Memory was saved");
+//   console.log("Perspective was saved");
 // });
-// var mem3 = new MemoryModel("mem3", {}, 3, 3,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
+// var mem3 = new PerspectiveModel("mem3", {}, 3, 3,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
 // mem3.save(function(err){
-//   console.log("Memory was saved");
+//   console.log("Perspective was saved");
 // });
-// var mem4 = new MemoryModel("mem4", {}, 4, 4,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
+// var mem4 = new PerspectiveModel("mem4", {}, 4, 4,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
 // mem4.save(function(err){
-//   console.log("Memory was saved");
+//   console.log("Perspective was saved");
 // });
-// var mem5 = new MemoryModel("mem5", {}, 5, 5,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
+// var mem5 = new PerspectiveModel("mem5", {}, 5, 5,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
 // mem5.save(function(err){
-//   console.log("Memory was saved");
+//   console.log("Perspective was saved");
 // });
-// var mem6 = new MemoryModel("mem6", {}, 6, 6,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
+// var mem6 = new PerspectiveModel("mem6", {}, 6, 6,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
 // mem6.save(function(err){
-//   console.log("Memory was saved");
+//   console.log("Perspective was saved");
 // });
-// var mem7 = new MemoryModel("mem7", {}, 7, 7,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
+// var mem7 = new PerspectiveModel("mem7", {}, 7, 7,  "No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother.");
 // mem7.save(function(err){
-//   console.log("Memory was saved");
+//   console.log("Perspective was saved");
 //
 // })
 //
@@ -101,18 +101,18 @@ for(var i = 0; i < users.length; i++) {
 // // db.once("open", function(){
 // //   console.log("Connected to the database.");
 // //   var user = require("../models/user");
-// //   var memory = require("../models/memory");
+// //   var perspective = require("../models/perspective");
 // //
-// //   memory.remove({}).then(function(){
+// //   perspective.remove({}).then(function(){
 // //     user.remove({}).then(function(){
 // //       forEach(userData, function(userDatum){
 // //         return new user(userDatum).save().then(function(user){
-// //           return forEach(memoryData[user.name], function(memoryDatum){
-// //             memory = new memory(memoryDatum);
-// //             console.log(user.name + " rembrs " + memory.title);
-// //             memory.user = user;
-// //             return memory.save().then(function(memory){
-// //               user.memorys.push(memory);
+// //           return forEach(perspectiveData[user.name], function(perspectiveDatum){
+// //             perspective = new perspective(perspectiveDatum);
+// //             console.log(user.name + " rembrs " + perspective.title);
+// //             perspective.user = user;
+// //             return perspective.save().then(function(perspective){
+// //               user.perspectives.push(perspective);
 // //               user.save();
 // //             });
 // //           })

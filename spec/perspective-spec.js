@@ -1,17 +1,17 @@
-var Memory = require("../public/js/models/memory");
+var Perspective = require("../public/js/models/perspective");
 
-describe ("A memory", function(){
+describe ("A perspective", function(){
 // DRY code changes
   var wedding;
   beforeEach(function(){
-    wedding = new Memory("Kris and Jen's Wedding", "10/18/08", "Jefferson Memorial", "It was fun.");
+    wedding = new Perspective("Kris and Jen's Wedding", "10/18/08", "Jefferson Memorial", "It was fun.");
   });
 
 // Tests
   it("should have a title", function (){
     expect(wedding.title).toBeDefined();
   });
-  it("should have a date of the memory", function (){
+  it("should have a date of the perspective", function (){
     expect(wedding.date).toBeDefined();
     expect(wedding.date).toBe("10/18/08");
   });
@@ -24,11 +24,11 @@ describe ("A memory", function(){
 
 
   it("should be able to be edited", function(){
-    var wedding = new Memory ("Kris and Jen's Wedding");
+    var wedding = new Perspective ("Kris and Jen's Wedding");
 
   });
   it("should be able to be deleted", function(){
-    var wedding = new Memory ("Kris and Jen's Wedding");
+    var wedding = new Perspective ("Kris and Jen's Wedding");
 
   });
 });
@@ -50,7 +50,7 @@ describe ("A memory", function(){
 // });
 //
 // it("saves to the databse", function(){
-//   var wedding = new Memory();
+//   var wedding = new Perspective();
 //   wedding.save().then(function(err, response){
 //     expect( err ).not.toBeNull();
 //   });
