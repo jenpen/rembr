@@ -2,8 +2,10 @@ var express = require("express");
 var app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
+
 var mongoose = require("mongoose");
 var perspectivesController = require("./controllers/perspectivesController");
+
 var passport     = require('passport');
 var flash        = require('connect-flash');
 var morgan       = require('morgan');
@@ -13,6 +15,7 @@ var usersController = require("./controllers/usersController");
 app.set("view engine", "hbs");
 var conn = mongoose.connect("mongodb://localhost/rembr");
 var env          =require("./config/env.js");
+
 
 
 app.use(express.static(path.join(__dirname,"/public")));
