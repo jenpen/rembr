@@ -42,4 +42,3 @@ app.listen(7812,function(){
 app.get("/", perspectivesController.index);
 app.get("/signup", usersController.getSignup);
 app.post("/signup", usersController.postSignup);
->>>>>>> 7f5cce8702700c759ad87bd476b77974888fc453
