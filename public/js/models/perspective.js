@@ -1,4 +1,4 @@
-function Memory(title, date, longitude, latitude, text) {
+function Perspective(title, date, longitude, latitude, text) {
   this.title = title;
   this.date = date;
   this.longitude = longitude;
@@ -6,4 +6,4 @@ function Memory(title, date, longitude, latitude, text) {
   this.text = text;
 }
 
-module.exports = Memory;
+module.exports = Perspective;

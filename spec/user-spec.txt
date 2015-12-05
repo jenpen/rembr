@@ -11,19 +11,19 @@ describe ("A user", function (){
   it("should have a unique username", function(){
 
   });
-  it("should be able to create memories", function(){
+  it("should be able to create perspectives", function(){
 
   });
-  it("should be able to view all memories", function(){
+  it("should be able to view all perspectives", function(){
 
   });
-  it("should be able to access a list of their memories", function(){
+  it("should be able to access a list of their perspectives", function(){
 
   });
-  it("should be able to edit memories", function(){
+  it("should be able to edit perspectives", function(){
 
   });
-  it("should be able to delete memories", function(){
+  it("should be able to delete perspectives", function(){
 
   });
 });
