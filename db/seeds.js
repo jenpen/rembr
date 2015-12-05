@@ -1,8 +1,10 @@
 require("./schema");
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/rembr");
+
 var UserModel = require("../models/user");
 var PerspectiveModel = require("../models/perspective");
+
 // var userData = require("./user_data");
 // var perspectiveData = require("./perspective_data");
 
