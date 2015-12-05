@@ -1,7 +1,7 @@
 {
   "name": "rembr",
   "version": "0.0.1",
-  "description": "Memory documentation application. Users can post and view memories based on their current location.",
+  "description": "Perspective documentation application. Users can post and view perspectives based on their current location.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

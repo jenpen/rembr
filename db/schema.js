@@ -10,11 +10,11 @@ var UserSchema = new Schema(
   {
     email: String,
     password: String,
-    memories: [{type: ObjectId, ref: "Memory"}]
+    perspectives: [{type: ObjectId, ref: "Perspective"}]
   }
 );
 
-var MemorySchema = new Schema (
+var PerspectiveSchema = new Schema (
   {
     title: String,
     longitude: Number,
@@ -29,5 +29,5 @@ var MemorySchema = new Schema (
   }
 );
 
-var MemoryModel = mongoose.model("Memory", MemorySchema);
+var PerspectiveModel = mongoose.model("Perspective", PerspectiveSchema);
 var UserModel = mongoose.model("User", UserSchema);
