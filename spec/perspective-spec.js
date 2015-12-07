@@ -44,14 +44,14 @@ describe ("A perspective", function(){
 // How to do asychronous stuff
 //
 // it("logs into Facebook", function(){
-//   $.getSON("http://facebook").then(function(response) {
-//     expect(response.isLoggedIn).toBe(true);
+//   $.getSON("http://facebook").then(function(res) {
+//     expect(res.isLoggedIn).toBe(true);
 //   });
 // });
 //
 // it("saves to the databse", function(){
 //   var wedding = new Perspective();
-//   wedding.save().then(function(err, response){
+//   wedding.save().then(function(err, res){
 //     expect( err ).not.toBeNull();
 //   });
 // });

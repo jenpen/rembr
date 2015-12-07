@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <meta charset='utf-8' />
     <title></title>
 
@@ -11,19 +12,39 @@
 
 
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+=======
+  <meta charset='utf-8' />
+  <title>R E M B R</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <!-- Script Links -->
+>>>>>>> 1a9c11276a2c42526212900003ba521bf5b005d3
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="./public/js/models/perspective.js"></script>
     <script src='../config/env.js'></script>
+<<<<<<< HEAD
     <script src='../js/script.js'></script>
 
     <style>
         h1{text-align: center;}
         body { margin:0; padding:0; }
         #map { position:absolute; top:50px; bottom:0px; width:100%; height:auto; margin: 10px;}
+=======
+
+  <!-- Stylesheets -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      h1{text-align: center;}
+      body { margin:0; padding:0; }
+      #map { position:absolute; top:49px; bottom:0px; width:100%; height:auto; margin: 10px;}
+>>>>>>> 1a9c11276a2c42526212900003ba521bf5b005d3
     </style>
 </head>
+
+
 <body>
 
+<<<<<<< HEAD
 <div id='map'></div>
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoibGV3aXMyYmEiLCJhIjoiY2loczEwYjE5MDBqdXRsbTFmNzR6Mm1rbyJ9.ypWiA8TKk_5Ar5Pp9Sq8fQ';
@@ -57,5 +78,21 @@ L.mapbox.featureLayer({
 
 </script>
 
+=======
+  <div id='map'></div>
+  <script>
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoibGV3aXMyYmEiLCJhIjoiY2loczEwYjE5MDBqdXRsbTFmNzR6Mm1rbyJ9.ypWiA8TKk_5Ar5Pp9Sq8fQ'
+
+  var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/lewis2ba/cihw3ndid00gx9nkpcj4efmjk', //stylesheet location
+    center: [-77.0164, 38.9047], // starting position
+    zoom: 13, // starting zoom
+
+    // {{api_key}}
+  });
+  </script>
+>>>>>>> 1a9c11276a2c42526212900003ba521bf5b005d3
 </body>
 </html>
