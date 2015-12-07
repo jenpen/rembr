@@ -1,27 +1,25 @@
-var express = require("express");
-var app = express();
-var path = require("path");
-var bodyParser = require("body-parser");
-
-var mongoose = require("mongoose");
-var perspectivesController = require("./controllers/perspectivesController");
-
+var express      = require('express');
+var app          = express();
+var mongoose     = require('mongoose');
 var passport     = require('passport');
 var flash        = require('connect-flash');
+var hbs   = require("hbs");
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
+var bodyParser   = require('body-parser');
 var session      = require('express-session');
-var usersController = require("./controllers/usersController");
-app.set("view engine", "hbs");
-var conn = mongoose.connect("mongodb://localhost/rembr");
-var env          =require("./config/env.js");
+var perspectivesController = require('./controllers/perspectivesController')
+var usersController = require('./controllers/usersController')
 
+mongoose.connect('mongodb://localhost/rembr');
 
-
-app.use(express.static(path.join(__dirname,"/public")));
-app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cookieParser());
+app.use(bodyParser());
+
+app.set('view engine', 'hbs');
+app.set("views","./views");
+app.use(express.static(__dirname + '/public'));
 
 app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' }));
 app.use(passport.initialize());
@@ -35,9 +33,8 @@ app.use(function (req, res, next) {
     next();
   });
 
-app.listen(7812,function(){
-  console.log("Listening on port 7812");
-});
+
+app.listen(7812);
 
 app.get("/", perspectivesController.index);
 app.get("/signup", usersController.getSignup);
