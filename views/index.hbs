@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8' />
-    <title></title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta charset='utf-8' />
+  <title>R E M B R</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <!-- Script Links -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="./public/js/models/perspective.js"></script>
     <script src='../config/env.js'></script>
+
+  <!-- Stylesheets -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
     <style>
-        h1{text-align: center;}
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:49px; bottom:0px; width:100%; height:auto; margin: 10px;}
+      h1{text-align: center;}
+      body { margin:0; padding:0; }
+      #map { position:absolute; top:49px; bottom:0px; width:100%; height:auto; margin: 10px;}
     </style>
 </head>
+
+
 <body>
 
-<div id='map'></div>
-<script>
+  <div id='map'></div>
+  <script>
 
- mapboxgl.accessToken = 'pk.eyJ1IjoibGV3aXMyYmEiLCJhIjoiY2loczEwYjE5MDBqdXRsbTFmNzR6Mm1rbyJ9.ypWiA8TKk_5Ar5Pp9Sq8fQ'
+  mapboxgl.accessToken = 'pk.eyJ1IjoibGV3aXMyYmEiLCJhIjoiY2loczEwYjE5MDBqdXRsbTFmNzR6Mm1rbyJ9.ypWiA8TKk_5Ar5Pp9Sq8fQ'
 
-var map = new mapboxgl.Map({
+  var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/lewis2ba/cihw3ndid00gx9nkpcj4efmjk', //stylesheet location
     center: [-77.0164, 38.9047], // starting position
     zoom: 13, // starting zoom
 
-// {{api_key}}
-});
-</script>
+    // {{api_key}}
+  });
+  </script>
 </body>
 </html>

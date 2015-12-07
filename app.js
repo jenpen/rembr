@@ -10,7 +10,7 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var perspectivesController = require('./controllers/perspectivesController');
 var usersController = require('./controllers/usersController');
-var api_key = require("./config/env.js");
+// var api_key = require("./config/env.js");
 
 mongoose.connect('mongodb://localhost/rembr');
 
@@ -48,6 +48,6 @@ function authenticatedUser(req, res, next) {
     // If the user is authenticated, then we continue the execution
     if (req.isAuthenticated()) return next();
 
-    // Otherwise the request is always redirected to the home page
+    // Otherwise the req is always redirected to the home page
     res.redirect('/');
   }

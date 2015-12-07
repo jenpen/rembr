@@ -1,45 +1,45 @@
+// Dependencies
 var passport = require("passport")
 
-// GET /signup
-function getSignup(request, response) {
-  response.render("signup.hbs", { message: request.flash('signupMessage') });
-}
 
-// POST /signup
-function postSignup(request, response) {
-  var signupStrategy = passport.authenticate('local-signup', {
-    successRedirect : '/',
-    failureRedirect : '/signup',
-    failureFlash : true
-  });
-  return signupStrategy(request, response);
-}
 
-// GET /login
-function getLogin(request, response) {
-  response.render('login.hbs', { message: request.flash('loginMessage') });
-}
+var usersController = {
 
-// POST /login
-function postLogin(request, response) {
-  var loginProperty = passport.authenticate('local-login', {
-    successRedirect : '/',
-    failureRedirect : '/login',
-    failureFlash : true
-  });
-  return loginProperty(request, response);
-}
+  // GET /signup
+  getSignup: function(req, res) {
+    res.render("signup.hbs", { message: req.flash('signupMessage') });
+  },
 
-// GET /logout
-function getLogout(request, response) {
-  request.logout();
-  response.redirect('/');
-}
+  // POST /signup
+  postSignup: function(req, res) {
+    var signupStrategy = passport.authenticate('local-signup', {
+      successRedirect : '/',
+      failureRedirect : '/signup',
+      failureFlash : true
+    });
+    return signupStrategy(req, res);
+  },
 
-module.exports = {
-  getLogin: getLogin,
-  postLogin: postLogin ,
-  getSignup: getSignup,
-  postSignup: postSignup,
-  getLogout: getLogout,
+  // GET /login
+  getLogin: function(req, res) {
+    res.render('login.hbs', { message: req.flash('loginMessage') });
+  },
+
+  // POST /login
+  postLogin: function(req, res) {
+    var loginProperty = passport.authenticate('local-login', {
+      successRedirect : '/',
+      failureRedirect : '/login',
+      failureFlash : true
+    });
+    return loginProperty(req, res);
+  },
+
+  // GET /logout
+  getLogout: function(req, res) {
+    req.logout();
+    res.redirect('/');
+  }
 };
+
+module.exports = usersController;
