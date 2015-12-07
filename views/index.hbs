@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta charset='utf-8' />
   <title>R E M B R</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Script Links -->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
-    <script src="./public/js/models/perspective.js"></script>
-    <script src='../config/env.js'></script>
+  <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
+  <script src='../config/env.js'></script>
+  <script src='../js/script.js'></script>
 
   <!-- Stylesheets -->
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
-    <style>
-      h1{text-align: center;}
-      body { margin:0; padding:0; }
-      #map { position:absolute; top:49px; bottom:0px; width:100%; height:auto; margin: 10px;}
-    </style>
+  <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+  h1{text-align: center;}
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:49px; bottom:0px; width:100%; height:auto; margin: 10px;}
+  </style>
 </head>
 
 
@@ -24,17 +28,33 @@
 
   <div id='map'></div>
   <script>
+  L.mapbox.accessToken = 'pk.eyJ1IjoibGV3aXMyYmEiLCJhIjoiY2loczEwYjE5MDBqdXRsbTFmNzR6Mm1rbyJ9.ypWiA8TKk_5Ar5Pp9Sq8fQ';
+  var map = L.mapbox.map('map', 'mapbox.streets')
+  .setView([38.91338, -77.03236], 13);
 
-  mapboxgl.accessToken = 'pk.eyJ1IjoibGV3aXMyYmEiLCJhIjoiY2loczEwYjE5MDBqdXRsbTFmNzR6Mm1rbyJ9.ypWiA8TKk_5Ar5Pp9Sq8fQ'
-
-  var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/lewis2ba/cihw3ndid00gx9nkpcj4efmjk', //stylesheet location
-    center: [-77.0164, 38.9047], // starting position
-    zoom: 13, // starting zoom
-
-    // {{api_key}}
-  });
+  L.mapbox.featureLayer({
+    // this feature is in the GeoJSON format: see geojson.org
+    // for the full specification
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      // coordinates here are in longitude, latitude order because
+      // x, y is the standard for GeoJSON and many formats
+      coordinates: [
+        -77.03221142292,
+        38.913371603574
+      ]
+    },
+    properties: {
+      title: 'Peregrine Espresso',
+      description: '1718 14th St NW, Washington, DC',
+      // one can customize markers by adding simplestyle properties
+      // https://www.mapbox.com/guides/an-open-platform/#simplestyle
+      'marker-size': 'large',
+      'marker-color': '#BE9A6B',
+      'marker-symbol': 'cafe'
+    }
+  }).addTo(map);
   </script>
 </body>
 </html>
