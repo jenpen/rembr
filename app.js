@@ -8,8 +8,9 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
-var perspectivesController = require('./controllers/perspectivesController')
-var usersController = require('./controllers/usersController')
+var perspectivesController = require('./controllers/perspectivesController');
+var usersController = require('./controllers/usersController');
+var api_key = require("./config/env.js");
 
 mongoose.connect('mongodb://localhost/rembr');
 
