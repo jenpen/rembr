@@ -41,3 +41,12 @@ app.get("/signup", usersController.getSignup);
 app.post("/signup", usersController.postSignup);
 app.get("/login", usersController.getLogin);
 app.post("/login", usersController.postLogin);
+app.get("/logout", usersController.getLogout);
+
+function authenticatedUser(req, res, next) {
+    // If the user is authenticated, then we continue the execution
+    if (req.isAuthenticated()) return next();
+
+    // Otherwise the request is always redirected to the home page
+    res.redirect('/');
+  }
