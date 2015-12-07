@@ -6,13 +6,13 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
 
-var UserSchema = new Schema(
-  {
-    email: String,
-    password: String,
-    perspectives: [{type: ObjectId, ref: "Perspective"}]
-  }
-);
+// var UserSchema = new Schema(
+//   {
+//     email: String,
+//     password: String,
+//     perspectives: [{type: ObjectId, ref: "Perspective"}]
+//   }
+// );
 
 var PerspectiveSchema = new Schema (
   {
@@ -30,4 +30,4 @@ var PerspectiveSchema = new Schema (
 );
 
 var PerspectiveModel = mongoose.model("Perspective", PerspectiveSchema);
-var UserModel = mongoose.model("User", UserSchema);
+// var UserModel = mongoose.model("User", UserSchema);
