@@ -1,11 +1,24 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
+var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
+// var schemaOptions = {
+//     toObject: {
+//       virtuals: true
+//     }
+//     ,toJSON: {
+//       virtuals: true
+//     }
+//   };
 
-var User = mongoose.Schema({
+  var User = mongoose.Schema({
   local : {
     email        : String,
     password     : String,
+    username     : String,
+    perspectives: [{type: ObjectId, ref: "Perspective"}]
   }
+
 });
 
 User.methods.validPassword = function(password) {
