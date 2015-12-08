@@ -25,6 +25,7 @@ var perspectivesController = {
 
   all: function(req,res){
     perspectiveModel.find({}).populate("user", "email").then(function(perspective){
+      console.log(perspective)
       res.json(perspective)
     })
   }
@@ -32,3 +33,45 @@ var perspectivesController = {
 };
 
 module.exports = perspectivesController;
+
+// var express = require("express");
+// var router = express.Router();
+// var User = require("../models/user");
+// var Perspective = require("../models/perspective");
+//
+// function error(response, message){
+//   response.status(500);
+//   response.json({error: message})
+// }
+//
+// router.get("/", function(req, res){
+//   Perspective.find({}).populate("user", "email").then(function(perspective){
+//     res.json(perspective);
+//   });
+// });
+//
+// router.get("/:id", function(req, res){
+//   Perspective.findById(req.params.id).populate("user", "email").then(function(perspective){
+//     res.json(perspective);
+//   });
+// });
+//
+// router.put("/:id", function(req, res){
+//   Perspective.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true}).then(function(perspective){
+//     res.json(perspective);
+//   });
+// });
+//
+// router.delete("/:id", function(req, res){
+//   Perspective.findById(req.params.id).then(function(song){
+//     User.findByIdAndUpdate(perspective.user._id, {
+//       $pull: { perspectives: {_id: req.params.id} }
+//     }).then(function(){
+//       return perspective.remove();
+//     }).then(function(){
+//       res.json({success: true});
+//     })
+//   });
+// });
+//
+// module.exports = router;

@@ -1,10 +1,10 @@
 $(document).ready(function(){
 User.fetch().then(function(users){
-  users.forEach(function(users){
+  User.all.forEach(function(users){
+    console.log(users)
     var view = new UserView(users)
     view.render();
   })
-
 })
 
 

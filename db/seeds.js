@@ -10,14 +10,19 @@ var PerspectiveModel = require("../models/perspective");
 
 
 var userOne = new UserModel({
+  local:{
   email: "two@two.com",
   password: "oneoneone",
-});
+}}
+);
 
 var userTwo = new UserModel({
+  local:{
   email: "three@three.com",
   password: "oneoneone",
-});
+}}
+);
+
 
 var mem1 = new PerspectiveModel({
   title: "mem1",

@@ -1,9 +1,9 @@
 var UserView = function(user){
  this.user = user;
- console.dir(user)
  this.$el = $("<div class='user'></div>");
+ this.render();
 }
-AuthorView.prototype = {
+UserView.prototype = {
  render: function(){
    var self = this;
    var user = self.user;

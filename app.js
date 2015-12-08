@@ -27,6 +27,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+
+
 require('./config/passport')(passport);
 
 app.use(function (req, res, next) {
@@ -34,19 +36,26 @@ app.use(function (req, res, next) {
     next();
   });
 
+  // app.use("*.json",function (req, res, next) {
+  //   req.headers.accept = 'application/json';
+  //   next();
+  // });
 
 app.listen(7812);
 
 app.get("/", perspectivesController.index);
+app.get("/perspectives", perspectivesController.all);
+
 app.get("/signup", usersController.getSignup);
 app.post("/signup", usersController.postSignup);
 app.get("/login", usersController.getLogin);
 app.post("/login", usersController.postLogin);
 app.get("/logout", usersController.getLogout);
-
 app.get("/users", usersController.index);
 
-app.get("/perspectives", perspectivesController.all);
+
+// app.use("/perspectives", require("./controllers/perspectives"));
+
 
 function authenticatedUser(req, res, next) {
     // If the user is authenticated, then we continue the execution
