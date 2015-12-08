@@ -5,6 +5,7 @@ var PerspectiveView = function(perspective){
 PerspectiveView.prototype = {
  render: function(){
    var perspective = this.perspective;
+
    return this.$el.html(perspective.body);
  }
 }

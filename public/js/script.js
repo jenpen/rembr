@@ -5,16 +5,47 @@ $(document).ready(function(){
 //
 
   // })
-// 
+//
 //   Perspective.fetch().then(function(perspectives){
 //     console.log(perspectives)
 //     })
 // })
+  Perspective.fetch().then(function(perspective){
+    console.log(Perspective.all)
+    Perspective.all.forEach(function(perspective){
+      // L.marker([perspective.latitude, perspective.longitude]).addTo(map);
+      console.log(perspective.latitude)
 
+    L.mapbox.featureLayer({
+    // this feature is in the GeoJSON format: see geojson.org
+    // for the full specification
+    type: 'Feature',
+    geometry: {
+        type: 'Point',
+        // coordinates here are in longitude, latitude order because
+        // x, y is the standard for GeoJSON and many formats
+        coordinates: [
+          perspective.longitude,
+          perspective.latitude
+        ]
+    },
+    properties: {
+        title: perspective.title,
+        description: perspective.text,
+        // one can customize markers by adding simplestyle properties
+        // https://www.mapbox.com/guides/an-open-platform/#simplestyle
+        'marker-size': 'large',
+        'marker-color': '#BE9A6B',
+        'marker-symbol': 'cafe'
+    }
+}).addTo(map);
+
+    })
+  })
 
   map.on('click', function(e) {
     console.log(e);
-
+    L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
     //render perspective input form
     //on "submit" post "/" create a new perspective in database
     //use ajax call to update map without page refresh?
@@ -31,7 +62,6 @@ $(document).ready(function(){
 
     // perspective = new Perspective(some JSON)
 
-    L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
   });
 
   var popup = L.popup();
@@ -39,7 +69,7 @@ $(document).ready(function(){
   function onMapClick(e) {
     popup
     .setLatLng(e.latlng)
-    .setContent("You clicked the map at " + e.latlng.toString())
+    .setContent("<form>Title: <input type = 'text' name = 'title'> Perspective: <input type ='text' name = 'perspective'> <input type = 'submit'></form>")
     .openOn(map);
   }
 
