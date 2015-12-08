@@ -1,6 +1,6 @@
 // Dependencies
-var perspectiveModel = require("../models/perspective");
-var api_key = require('../config/env.js');
+var perspective = require("../models/perspective");
+// var api_key = require('./env.js');
 
 var perspectivesController = {
 
@@ -21,6 +21,10 @@ var perspectivesController = {
     new PerspectiveModel({title: req.body.title, content: req.body.title}).save(function(err, perspective){
       res.json(perspectives);
     });
+  },
+
+  update: function(req, res){
+    PerspectiveModel
   },
 
   all: function(req,res){
