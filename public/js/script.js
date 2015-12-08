@@ -1,11 +1,15 @@
 $(document).ready(function(){
-User.fetch().then(function(users){
-  users.forEach(function(users){
-    var view = new UserView(users)
-    view.render();
-  })
+// User.fetchPerspectives().then(function(users){
+//   User.all.forEach(function(users){
+//     console.log(users)
+//
 
-})
+  // })
+// 
+//   Perspective.fetch().then(function(perspectives){
+//     console.log(perspectives)
+//     })
+// })
 
 
   map.on('click', function(e) {

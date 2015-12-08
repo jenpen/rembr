@@ -27,6 +27,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+
+
 require('./config/passport')(passport);
 
 app.use(function (req, res, next) {
@@ -34,6 +36,10 @@ app.use(function (req, res, next) {
     next();
   });
 
+  // app.use("*.json",function (req, res, next) {
+  //   req.headers.accept = 'application/json';
+  //   next();
+  // });
 
 app.listen(7812, function() {
   console.log(" *** listending on port 7812 *** ");
@@ -44,6 +50,7 @@ app.get("/", perspectivesController.index);
 app.get("/perspectives", perspectivesController.all);
 
 // User Routes
+
 app.get("/signup", usersController.getSignup);
 app.post("/signup", usersController.postSignup);
 app.get("/login", usersController.getLogin);

@@ -7,46 +7,55 @@ var PerspectiveModel = require("../models/perspective");
 
 // var userData = require("./user_data");
 // var perspectiveData = require("./perspective_data");
-
+UserModel.remove({}, function(err){
+ console.log(err);
+});
+PerspectiveModel.remove({}, function(err){
+ console.log(err);
+});
 
 var userOne = new UserModel({
+  local:{
   email: "two@two.com",
   password: "oneoneone",
-});
+}}
+);
 
 var userTwo = new UserModel({
+  local:{
   email: "three@three.com",
   password: "oneoneone",
-});
+}}
+);
+
 
 var mem1 = new PerspectiveModel({
   title: "mem1",
-  latitude: 1,
-  longitude: 1,
+  latitude: 38.90439,
+  longitude: -77.04317,
   text:"No! The cat shelter's on to me. Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother."
 });
 
 var mem2 = new PerspectiveModel({
   title: "mem2",
-  latitude: 2,
-  longitude: 2,
+  latitude: 38.92817,
+  longitude: -77.03184,
   text:"Robot 1-X, save my friends! And Zoidberg! For one beautiful night I knew what it was like to be a grandmother."
 });
 
 var mem3 = new PerspectiveModel({
   title: "mem3",
-  latitude: 3,
-  longitude: 3,
+  latitude: 38.8909,
+  longitude: -77.05313,
   text:"No! The cat shelter's on to me. For one beautiful night I knew what it was like to be a grandmother."
 });
 
 var mem4 = new PerspectiveModel({
   title: "mem4",
-  latitude: 4,
-  longitude: 4,
+  latitude: 38.89891,
+  longitude: -77.01777777777,
   text:"For one beautiful night I knew what it was like to be a grandmother."
-});
-
+})
 var users = [userOne, userTwo];
 var perspectives = [mem1, mem2, mem3, mem4];
 
@@ -60,6 +69,17 @@ for(var i = 0; i < users.length; i++) {
       console.log("user was saved");
     }
   })
+
+
+}
+for(var i=0; i<perspectives.length; i++){
+perspectives[i].save(function(err) {
+  if (err){
+    console.log(err);
+  } else {
+    console.log("Perspective was saved");
+  }
+});
 }
 // mem1.save(function(err, docs){
 //   console.log("Perspective was saved")

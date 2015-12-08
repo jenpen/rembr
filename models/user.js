@@ -18,7 +18,6 @@ var ObjectId = Schema.Types.ObjectId;
     username     : String,
     perspectives: [{type: ObjectId, ref: "Perspective"}]
   }
-
 });
 
 User.methods.validPassword = function(password) {
