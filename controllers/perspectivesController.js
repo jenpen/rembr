@@ -10,25 +10,30 @@ var perspectivesController = {
   },
 
   index: function(req,res){
-      perspectiveModel.find({},function(err, perspectives){
+      perspective.find({},function(err, perspectives){
       console.log(perspectives);
       res.render("index",{perspectives: perspectives, api_key: api_key.api_key});
       // res.json(perspectives)
     });
   },
 
-  create: function(req,res){
-    new PerspectiveModel({title: req.body.title, content: req.body.title}).save(function(err, perspective){
-      res.json(perspectives);
-    });
-  },
-
-  update: function(req, res){
-    PerspectiveModel
-  },
+  // create: function(req,res){
+  //   new PerspectiveModel({title: req.body.title, content: req.body.title}).save(function(err, perspective){
+  //     res.json(perspectives);
+  //   });
+  // },
+  //
+  // update: function(req, res){
+  //   perspective.findById(req.params.id, function(err, perspective){
+  //     perspective.title = req.body.title;
+  //     perspective.save(function(err, perspective){
+  //       res.json(perspective);
+  //     });
+  //   });
+  // },
 
   all: function(req,res){
-    perspectiveModel.find({}).populate("user", "email").then(function(perspective){
+    perspective.find({}).populate("user", "email").then(function(perspective){
       console.log(perspective);
       res.json(perspective);
     });

@@ -48,6 +48,8 @@ app.listen(7812, function() {
 // Perspective Routes
 app.get("/", perspectivesController.index);
 app.get("/perspectives", perspectivesController.all);
+// app.post("/user/:id/perspectives", perspectivesController.addReminder);
+// app.delete("/user/:userId/perspectives/:id", perspectivesController.removeReminder);
 
 // User Routes
 
