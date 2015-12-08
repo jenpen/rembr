@@ -5,11 +5,11 @@ $(document).ready(function(){
 //
 
   // })
-
-  Perspective.fetch().then(function(perspectives){
-    console.log(perspectives)
-    })
-})
+// 
+//   Perspective.fetch().then(function(perspectives){
+//     console.log(perspectives)
+//     })
+// })
 
 
   map.on('click', function(e) {
