@@ -44,6 +44,10 @@ app.get("/login", usersController.getLogin);
 app.post("/login", usersController.postLogin);
 app.get("/logout", usersController.getLogout);
 
+app.get("/users", usersController.index);
+
+app.get("/perspectives", perspectivesController.all);
+
 function authenticatedUser(req, res, next) {
     // If the user is authenticated, then we continue the execution
     if (req.isAuthenticated()) return next();

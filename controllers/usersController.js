@@ -1,6 +1,6 @@
 // Dependencies
 var passport = require("passport")
-
+var userModel = require("../models/user.js")
 
 
 var usersController = {
@@ -39,6 +39,13 @@ var usersController = {
   getLogout: function(req, res) {
     req.logout();
     res.redirect('/');
+  },
+
+  index: function(req,res){
+    userModel.find({}).then(function(users){
+      console.log(users)
+      res.json(users);
+    })
   }
 };
 

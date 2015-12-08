@@ -10,12 +10,12 @@ var PerspectiveModel = require("../models/perspective");
 
 
 var userOne = new UserModel({
-  email: "one@one.com",
+  email: "two@two.com",
   password: "oneoneone",
 });
 
 var userTwo = new UserModel({
-  email: "one@one.com",
+  email: "three@three.com",
   password: "oneoneone",
 });
 
@@ -51,7 +51,7 @@ var users = [userOne, userTwo];
 var perspectives = [mem1, mem2, mem3, mem4];
 
 for(var i = 0; i < users.length; i++) {
-  users[i].perspectives.push(perspectives[i], perspectives[i+2]);
+  users[i].local.perspectives.push(perspectives[i], perspectives[i+2]);
 
   users[i].save(function(err) {
     if (err){

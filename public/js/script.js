@@ -1,8 +1,20 @@
 $(document).ready(function(){
+User.fetch().then(function(users){
+  users.forEach(function(users){
+    var view = new UserView(users)
+    view.render();
+  })
+
+})
 
 
   map.on('click', function(e) {
     console.log(e);
+
+    //render perspective input form
+    //on "submit" post "/" create a new perspective in database
+    //use ajax call to update map without page refresh?
+
 
     // perspective = new Perspective{
     //   title:,
