@@ -15,3 +15,18 @@ User.fetch = function(){
   });
   return request;
 }
+
+User.prototype = {
+  fetchPerspectives: function(){
+    var user = this;
+    var url = "http://localhost:7812/perspectives";
+    user.perspectives = [];
+    var request = $.getJSON(url).then(function(response){
+      for(var i = 0; i < response.length; i++){
+        user.perspectives.push(new Perspective(response[i]));
+      }
+    }).fail(function(repsonse){
+      console.log("js failed to load");
+    });
+    return request;
+  }
