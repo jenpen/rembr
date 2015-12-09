@@ -2,7 +2,7 @@
 var perspective = require("../models/perspective");
 var api_key = require('../env.js');
 var user = require('../models/user')
-
+require('../public/js/models/perspective.js')
 var perspectivesController = {
 
   error: function (res, message){
@@ -39,34 +39,13 @@ var perspectivesController = {
        else{
          console.log("success?")
          console.log(currentUser.perspectives)
+         newPerspective.create();
        }
      })
 
-    //  L.mapbox.featureLayer({
-    //    // this feature is in the GeoJSON format: see geojson.org for the full specification
-    //    type: 'Feature',
-    //    geometry: {
-    //      type: 'Point',
-    //      // coordinates here are in longitude, latitude order because x, y is the standard for GeoJSON and many formats
-    //      coordinates: [
-    //        req.body.longitude,
-    //        req.body.latitude
-    //      ]
-    //    },
-    //    properties: {
-    //      title: req.body.title,
-    //      description: req.body.text,
-    //      // one can customize markers by adding simplestyle properties
-    //      // https://www.mapbox.com/guides/an-open-platform/#simplestyle
-    //      'marker-size': 'large',
-    //      'marker-color': '#007399',
-    //      'marker-symbol': 'camera'
-    //    }
-    //  }).addTo(map);
-
   },
   update: function(req, res){
-    perspective.findById(req.params.id, function(err, perspective){
+      perspective.findById(req.params.id, function(err, perspective){
       perspective.title = req.body.title;
       perspective.text = req.body.text;
       perspective.date = req.body.date;
