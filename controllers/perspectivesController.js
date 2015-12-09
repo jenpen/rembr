@@ -11,7 +11,6 @@ var perspectivesController = {
 
   index: function(req,res){
       perspective.find({},function(err, perspectives){
-      console.log(perspectives);
       res.render("index",{perspectives: perspectives, api_key: api_key});
       // res.json(perspectives)
     });
@@ -29,17 +28,21 @@ var perspectivesController = {
       });
     });
   },
-  // update: function(req, res){
-  //   perspective.findById(req.params.id, function(err, perspective){
-  //     perspective.title = req.body.title;
-  //     perspective.save(function(err, perspective){
-  //       res.json(perspective);
-  //     });
-  //   });
-  // },
+  update: function(req, res){
+    perspective.findById(req.params.id, function(err, perspective){
+      perspective.title = req.body.title;
+      perspective.text = req.body.text;
+      perspective.date = req.body.date;
+      perspective.longitude = req.body.longitude;
+      perspective.latitude = req.body.latitude;
+      perspective.save(function(err, perspective){
+        res.json(perspective);
+      });
+    });
+  },
+
   all: function(req,res){
     perspective.find({}).populate("user", "email").then(function(perspective){
-      console.log(perspective);
       res.json(perspective);
     });
   }
