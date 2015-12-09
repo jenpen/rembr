@@ -36,5 +36,9 @@ $(document).ready(function(){
     .setContent(
       "<form action = '/' method='post'>Title: <input type = 'text' name = 'title'> \n\n Perspective: <input type ='text' name = 'text'>latitude: <input type ='text' name = 'latitude' value="+e.latlng.lat+">longitude: <input type ='text' name = 'longitude' value ="+e.latlng.lng+"> <input type = 'submit'></form>").openOn(map);
  }
+    console.log($("#logout").html())
+    if($('#logout').html()){
     map.on('click', onMapClick);
+    }
+
   });

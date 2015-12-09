@@ -29,7 +29,7 @@
 
             <!-- Current user can logout -->
             {{#if currentUser}}
-            <li><a href="/logout">l o g  o u t {{currentUser.local.email}}</a></li>
+            <li id="logout"><a href="/logout">l o g  o u t {{currentUser.local.email}}</a></li>
             {{else}}
 
             <!-- User can login -->
@@ -59,7 +59,6 @@
                       </form>
                     </div>
                   </div>
-                  <!-- </div> -->
                 </div>
               </div>
             </li>
