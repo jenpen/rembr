@@ -43,17 +43,6 @@ $(document).ready(function(){
     //on "submit" post "/" create a new perspective in database
     //use ajax call to update map without page refresh?
 
-
-    // perspective = new Perspective{
-    //   title:,
-    //   text:,
-    //   date:,
-    //   longitude: e.latlng.lat,
-    //   latitude: e.latlng.lng,
-    //   user: currentUser
-    // }
-
-    // perspective = new Perspective(some JSON)
   });
 
   var popup = L.popup();
@@ -71,6 +60,7 @@ $(document).ready(function(){
       console.log(date);
     });
   }
+
     map.on('click', onMapClick);
 
   });
