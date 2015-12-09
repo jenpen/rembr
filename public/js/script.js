@@ -20,7 +20,7 @@ $(document).ready(function(){
           // one can customize markers by adding simplestyle properties
           // https://www.mapbox.com/guides/an-open-platform/#simplestyle
           'marker-size': 'large',
-          'marker-color': '#FFA500',
+          'marker-color': '#007399',
           'marker-symbol': 'camera'
         }
       }).addTo(map);
@@ -28,14 +28,7 @@ $(document).ready(function(){
     });
   });
 
-  map.on('click', function(e) {
-    console.log(e);
-    L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-    //render perspective input form
-    //on "submit" post "/" create a new perspective in database
-    //use ajax call to update map without page refresh?
 
-  });
 
   var popup = L.popup();
   function onMapClick(e) {
@@ -76,7 +69,8 @@ $(document).ready(function(){
     //
     // });
  }
-
+    if($('#logout').html()){
     map.on('click', onMapClick);
+    }
 
   });
