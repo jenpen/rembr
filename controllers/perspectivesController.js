@@ -1,6 +1,6 @@
 // Dependencies
 var perspective = require("../models/perspective");
-// var api_key = require('./env.js');
+var api_key = require('../env.js');
 
 var perspectivesController = {
 
@@ -12,17 +12,23 @@ var perspectivesController = {
   index: function(req,res){
       perspective.find({},function(err, perspectives){
       console.log(perspectives);
-      res.render("index",{perspectives: perspectives});
+      res.render("index",{perspectives: perspectives, api_key: api_key});
       // res.json(perspectives)
     });
   },
-
-  // create: function(req,res){
-  //   new PerspectiveModel({title: req.body.title, content: req.body.title}).save(function(err, perspective){
-  //     res.json(perspectives);
-  //   });
-  // },
-  //
+  create: function(req,res){
+    user.findById(req.params.id, function(err, user) {
+      var perspective = new PerspectiveModel({
+        title: req.body.title,
+        text: req.body.text,
+        date: req.body.date,
+        longitude: req.body.longitude,
+        latitude: req.body.latitude
+      }).save(function(err, perspective){
+        res.json(perspectives);
+      });
+    });
+  },
   // update: function(req, res){
   //   perspective.findById(req.params.id, function(err, perspective){
   //     perspective.title = req.body.title;
@@ -31,7 +37,6 @@ var perspectivesController = {
   //     });
   //   });
   // },
-
   all: function(req,res){
     perspective.find({}).populate("user", "email").then(function(perspective){
       console.log(perspective);

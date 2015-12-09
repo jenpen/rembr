@@ -2,7 +2,8 @@ var UserView = function(user){
  this.user = user;
  this.$el = $("<div class='user'></div>");
  this.render();
-}
+};
+
 UserView.prototype = {
  render: function(){
    var self = this;
@@ -20,4 +21,4 @@ UserView.prototype = {
    html.append("<p>"+user.email+"</p>");
    return html;
  }
-}
+};

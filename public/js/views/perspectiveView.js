@@ -1,17 +1,16 @@
 var PerspectiveView = function(perspective){
  this.perspective = perspective;
  this.$el = $("<p class='perspective'></p>");
-}
+};
 PerspectiveView.prototype = {
  render: function(){
    var perspective = this.perspective;
 
    return this.$el.html(perspective.body);
  }
-}
+};
 
 
-  // ,
   // update: function(artistData) {
   // var self = this;
   // var url = "http://localhost:3000/artists/" + this.id;
@@ -31,4 +30,3 @@ PerspectiveView.prototype = {
   //     this[attrname] = newData[attrname];
   //   }
   // }
-};

@@ -5,7 +5,7 @@ var Perspective = function(info) {
   this.latitude = info.latitude;
   this.text = info.text;
 };
- Perspective.all = []
+ Perspective.all = [];
 
  Perspective.fetch = function(){
    var url = "http://localhost:7812/perspectives";
@@ -18,4 +18,4 @@ var Perspective = function(info) {
      console.log("Users fetch fail.");
    });
    return request;
- }
+ };
