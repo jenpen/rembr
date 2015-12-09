@@ -39,14 +39,14 @@ var usersController = {
   getLogout: function(req, res) {
     req.logout();
     res.redirect('/');
-  },
-
-  index: function(req,res){
-    userModel.find({}).then(function(users){
-      console.log(users)
-      res.json(users);
-    })
   }
+
+  // index: function(req,res){
+  //   userModel.find({}).then(function(users){
+  //     console.log(users)
+  //     res.json(users);
+  //   })
+  // }
 };
 
 module.exports = usersController;

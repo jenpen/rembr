@@ -2,14 +2,6 @@ var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
-// var schemaOptions = {
-//     toObject: {
-//       virtuals: true
-//     }
-//     ,toJSON: {
-//       virtuals: true
-//     }
-//   };
 
   var User = mongoose.Schema({
   local : {
