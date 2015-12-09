@@ -5,15 +5,6 @@ var bcrypt   = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
-
-// var UserSchema = new Schema(
-//   {
-//     email: String,
-//     password: String,
-//     perspectives: [{type: ObjectId, ref: "Perspective"}]
-//   }
-// );
-
 var PerspectiveSchema = new Schema (
   {
     title: String,
@@ -30,4 +21,3 @@ var PerspectiveSchema = new Schema (
 );
 
 var PerspectiveModel = mongoose.model("Perspective", PerspectiveSchema);
-// var UserModel = mongoose.model("User", UserSchema);
