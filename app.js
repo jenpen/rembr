@@ -10,10 +10,10 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var perspectivesController = require('./controllers/perspectivesController');
 var usersController = require('./controllers/usersController');
-// var api_key = require("./config/env.js");
 
 mongoose.connect('mongodb://localhost/rembr');
 
+// Middleware
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser());
@@ -29,13 +29,16 @@ app.use(flash());
 
 require('./config/passport')(passport);
 
+// Set Current User
 app.use(function (req, res, next) {
-    res.locals.currentUser = req.user;
-    next();
-  });
+  res.locals.currentUser = req.user;
+  next();
+});
 
 
-app.listen(7812);
+app.listen(7812, function(){
+  console.log("*** Listening on Port 7812 ***")
+});
 
 // Perspective Routes
 app.get("/", perspectivesController.index);
@@ -52,9 +55,9 @@ app.get("/logout", usersController.getLogout);
 // app.get("/users", usersController.index);
 
 function authenticatedUser(req, res, next) {
-    // If the user is authenticated, then we continue the execution
-    if (req.isAuthenticated()) return next();
+  // If the user is authenticated, then we continue the execution
+  if (req.isAuthenticated()) return next();
 
-    // Otherwise the req is always redirected to the home page
-    res.redirect('/');
-  }
+  // Otherwise the req is always redirected to the home page
+  res.redirect('/');
+}

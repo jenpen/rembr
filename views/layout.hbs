@@ -4,10 +4,9 @@
   <!-- Script links -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" type="text/css" href="/css/styles.css"> -->
+  <link rel="stylesheet" type="text/css" href="./css/application.css">
 </head>
 
 <body>
@@ -25,134 +24,108 @@
           </button>
           <a class="navbar-brand" href="/">R E M B R</a>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <!-- search bar (tobe implemented later) -->
-          <!-- <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form> -->
-      <!-- end of search -->
-      <ul class="nav navbar-nav navbar-right">
-        {{#if currentUser}}
-        <li><a href="/logout">l o g  o u t {{currentUser.local.email}}</a></li>
-        {{else}}
+          <ul class="nav navbar-nav navbar-right">
 
+            <!-- Current user can logout -->
+            {{#if currentUser}}
+            <li><a href="/logout">l o g  o u t {{currentUser.local.email}}</a></li>
+            {{else}}
 
-
-        <li><a href="" data-toggle="modal" data-target=".login-modal">l o g  i n</a>
-          <div class="modal fade bannerformmodal login-modal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-              <!-- <div class="modal-content"> -->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">L O G  I N</h4>
+            <!-- User can login -->
+            <li><a href="" data-toggle="modal" data-target=".login-modal">l o g  i n</a>
+              <div class="modal fade bannerformmodal login-modal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">L O G  I N</h4>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Flash message appears within the modal if login error -->
+                      {{#if message.length}}
+                      <div class="alert alert-danger">{{message}}</div>
+                      {{/if}}
+                      <form method="post" action="/login">
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input class="form-control" type="text" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Password</label>
+                          <input class="form-control" type="password" name="password" id="password">
+                        </div>
+                        <input class="btn btn-default" type="submit">
+                      </form>
+                    </div>
                   </div>
-                  <div class="modal-body">
-
-                    {{#if message.length}}
-                    <div class="alert alert-danger">{{message}}</div>
-                    {{/if}}
-
-                    <form method="post" action="/login">
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input class="form-control" type="text" name="email" id="email">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="email">Password</label>
-                        <input class="form-control" type="password" name="password" id="password">
-                      </div>
-
-                      <input class="btn btn-default" type="submit">
-                    </form>
-                  </div>
-                </div>
-              <!-- </div> -->
-            </div>
-          </div>
-        </li>
-
-
-
-        <li><a href="" data-toggle="modal" data-target=".signup-modal">s i g n  u p</a>
-          <div class="modal fade bannerformmodal signup-modal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-              <!-- <div class="modal-content"> -->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">S I G N  U P</h4>
-                  </div>
-                  <div class="modal-body">
-
-                    {{#if message.length}}
-                    <div class="alert alert-danger">{{message}}</div>
-                    {{/if}}
-
-                    <form method="post" action="/signup">
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input class="form-control" type="text" name="email" id="email">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="email">Password</label>
-                        <input class="form-control" type="password" name="password" id="password">
-                      </div>
-
-                      <input class="btn btn-default" type="submit">
-                    </form>
-                  </div>
-                </div>
-              <!-- </div> -->
-            </div>
-          </div>
-        </li>
-
-
-
-        <li role="separator" class="divider"></li>
-        {{/if}}
-
-
-        <li><a href="" data-toggle="modal" data-target=".about-modal">a b o u t</a>
-
-          <div class="modal fade bannerformmodal about-modal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-              <div class="modal-content">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">R E M B R</h4>
-                  </div>
-                  <div class="modal-body">
-
-
-                    rembr is a social platform that allows users to document their perscpective at a certain place and time
-
-
-                  </div>
-
+                  <!-- </div> -->
                 </div>
               </div>
-            </div>
-          </div>
+            </li>
 
-        </li>
+            <!-- User can signup IF they do not have an existing login -->
+            <li><a href="" data-toggle="modal" data-target=".signup-modal">s i g n  u p</a>
+              <div class="modal fade bannerformmodal signup-modal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">S I G N  U P</h4>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Flash message appears within the modal if signup error -->
+                      {{#if message.length}}
+                      <div class="alert alert-danger">{{message}}</div>
+                      {{/if}}
+                      <form method="post" action="/signup">
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input class="form-control" type="text" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                          <label for="password">Password</label>
+                          <input class="form-control" type="password" name="password" id="password">
+                        </div>
+                        <input class="btn btn-default" type="submit">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li role="separator" class="divider"></li>
+            {{/if}}
 
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<!-- nav bar end -->
-<!-- <h1><a href="/">R E M B R</a></h1> -->
-</header>
-{{{body}}}
-</body>
-</html>
+            <!-- About Page Modal -->
+            <li><a href="" data-toggle="modal" data-target=".about-modal">a b o u t</a>
+              <div class="modal fade bannerformmodal about-modal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">R E M B R</h4>
+                      </div>
+                      <div class="modal-body">
+
+
+                        rembr is a social platform that allows users to document their perscpective at a certain place and time
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- nav bar end -->
+  </header>
+  <body>
+    {{{body}}}
+  </body>
+  </html>
