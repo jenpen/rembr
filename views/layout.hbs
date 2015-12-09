@@ -43,50 +43,77 @@
 
 
 
-        <li><a href="" data-toggle="modal data-target =".bannerformmodal>l o g  i n</a>
-
-
-          <div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                  <div class="modal-content">
-                    <div class="modal-content">
-                          <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title" id="myModalLabel"> S I G N  U P</h4>
-                          </div>
-                          <div class="modal-body">
-                          <!-- <div class="col-sm-3 col-md-3"></div> -->
-
-                            {{#if message.length}}
-                            <div class="alert alert-danger">{{message}}</div>
-                            {{/if}}
-
-                            <form method="post" action="/signup">
-                              <div class="form-group">
-                                <label for="email">Email</label>
-                                <input class="form-control" type="text" name="email" id="email">
-                              </div>
-
-                              <div class="form-group">
-                                <label for="email">Password</label>
-                                <input class="form-control" type="password" name="password" id="password">
-                              </div>
-
-                              <input class="btn btn-default" type="submit">
-
-                            </form>
-                          <!-- <div class="col-sm-3 col-md-3"></div> -->
-
-                            </div>
+        <li><a href="" data-toggle="modal" data-target=".login-modal">l o g  i n</a>
+          <div class="modal fade bannerformmodal login-modal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <!-- <div class="modal-content"> -->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">L O G  I N</h4>
                   </div>
+                  <div class="modal-body">
+
+                    {{#if message.length}}
+                    <div class="alert alert-danger">{{message}}</div>
+                    {{/if}}
+
+                    <form method="post" action="/login">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control" type="text" name="email" id="email">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email">Password</label>
+                        <input class="form-control" type="password" name="password" id="password">
+                      </div>
+
+                      <input class="btn btn-default" type="submit">
+                    </form>
                   </div>
                 </div>
-              </div>
+              <!-- </div> -->
+            </div>
+          </div>
         </li>
 
 
 
-        <li><a href="/signup">s i g n  u p</a></li>
+        <li><a href="" data-toggle="modal" data-target=".signup-modal">s i g n  u p</a>
+          <div class="modal fade bannerformmodal signup-modal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <!-- <div class="modal-content"> -->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">S I G N  U P</h4>
+                  </div>
+                  <div class="modal-body">
+
+                    {{#if message.length}}
+                    <div class="alert alert-danger">{{message}}</div>
+                    {{/if}}
+
+                    <form method="post" action="/signup">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control" type="text" name="email" id="email">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email">Password</label>
+                        <input class="form-control" type="password" name="password" id="password">
+                      </div>
+
+                      <input class="btn btn-default" type="submit">
+                    </form>
+                  </div>
+                </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </li>
 
 
 
@@ -94,9 +121,9 @@
         {{/if}}
 
 
-        <li><a href="" data-toggle="modal" data-target=".bannerformmodal">a b o u t</a>
+        <li><a href="" data-toggle="modal" data-target=".about-modal">a b o u t</a>
 
-          <div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
+          <div class="modal fade bannerformmodal about-modal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true">
             <div class="modal-dialog modal-sm">
               <div class="modal-content">
                 <div class="modal-content">
@@ -107,7 +134,7 @@
                   <div class="modal-body">
 
 
-                        rembr is a social platform that allows users to document their perscpective at a certain place and time
+                    rembr is a social platform that allows users to document their perscpective at a certain place and time
 
 
                   </div>
