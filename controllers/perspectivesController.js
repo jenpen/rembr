@@ -16,6 +16,7 @@ var perspectivesController = {
       // res.json(perspectives)
     });
   },
+  
   create: function(req,res){
     var currentUser = req.user.local
     console.log(currentUser)
