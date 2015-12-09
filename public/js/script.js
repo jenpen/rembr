@@ -54,17 +54,23 @@ $(document).ready(function(){
     // }
 
     // perspective = new Perspective(some JSON)
-
   });
 
   var popup = L.popup();
-
   function onMapClick(e) {
     popup
     .setLatLng(e.latlng)
-    .setContent("<form>Title: <input type = 'text' name = 'title'> Perspective: <input type ='text' name = 'perspective'> <input type = 'submit'></form>")
-    .openOn(map);
-  }
+    .setContent(
+      "<form>Title: <input type = 'text' name = 'title'> \n\n Perspective: <input type ='text' name = 'perspective'> <input type = 'submit'></form>").openOn(map);
 
-  map.on('click', onMapClick);
-});
+// Goal: see action on clicking submit?????
+    $("#form").submit(function(e){
+      // e.preventDefault();
+      console.log("please just submit");
+      var date =$("#date").val();
+      console.log(date);
+    });
+  }
+    map.on('click', onMapClick);
+
+  });
