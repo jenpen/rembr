@@ -17,12 +17,6 @@ var perspectivesController = {
     });
   },
   create: function(req,res){
-    // console.log("this is triggered")
-    // console.log(req.body.title)
-    // console.log(req.body.text)
-    // console.log(req.body.latitude)
-    // console.log(req.body.longitude)
-    // console.log(req.user.local.perspectives)
     var currentUser = req.user.local
     console.log(currentUser)
     console.log(currentUser.perspectives);
@@ -38,8 +32,6 @@ var perspectivesController = {
       console.log(err)
     }
    })
-
-    //  var newPerspective = new perspective({title: req.body.title, text: req.body.text, latitude: req.body.latitude, longitude: req.body.longitude})
      newPerspective.save(function(err){
        if(err){
          console.log(err)
@@ -49,33 +41,7 @@ var perspectivesController = {
          console.log(currentUser.perspectives)
        }
      })
-    //  currentUser.perspectives[i].save(function(err){
-    //    if(err){
-    //      console.log(err)
-    //    }
-    //    else {
-    //      console.log("successful")
-    //    }
-    //  })
-  //  currentUser.perspectives.forEach(function(perspective){
-  //    console.log(perspective[per])
-  //    perspective.save(function(){
-  //      console.log("saved?!")
-  //    })
-  //  })
 
-
-    // user.findById(req.params.id, function(err, user) {
-    //   var perspective = new PerspectiveModel({
-    //     title: req.body.title,
-    //     text: req.body.text,
-    //     date: req.body.date,
-    //     longitude: req.body.longitude,
-    //     latitude: req.body.latitude
-    //   }).save(function(err, perspective){
-    //     res.json(perspectives);
-    //   });
-    // });
   },
   update: function(req, res){
     perspective.findById(req.params.id, function(err, perspective){

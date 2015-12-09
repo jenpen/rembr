@@ -43,17 +43,6 @@ $(document).ready(function(){
     //on "submit" post "/" create a new perspective in database
     //use ajax call to update map without page refresh?
 
-
-    // perspective = new Perspective{
-    //   title:,
-    //   text:,
-    //   date:,
-    //   longitude: e.latlng.lat,
-    //   latitude: e.latlng.lng,
-    //   user: currentUser
-    // }
-
-    // perspective = new Perspective(some JSON)
   });
 
   var popup = L.popup();
@@ -63,14 +52,6 @@ $(document).ready(function(){
     .setContent(
       "<form action = '/perspectives' method='post'>Title: <input type = 'text' name = 'title'> \n\n Perspective: <input type ='text' name = 'text'>latitude: <input type ='text' name = 'latitude' value="+e.latlng.lat+">longitude: <input type ='text' name = 'longitude' value ="+e.latlng.lng+"> <input type = 'submit'></form>").openOn(map);
 
-// Goal: see action on clicking submit?????
-    $("#form").submit(function(e){
-      // e.preventDefault();
-      console.log("please just submit");
-      var date =$("#date").val();
-      console.log(date);
-    });
-  }
     map.on('click', onMapClick);
 
   });
