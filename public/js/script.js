@@ -61,7 +61,7 @@ $(document).ready(function(){
     popup
     .setLatLng(e.latlng)
     .setContent(
-      "<form>Title: <input type = 'text' name = 'title'> \n\n Perspective: <input type ='text' name = 'perspective'> <input type = 'submit'></form>").openOn(map);
+      "<form action = '/perspectives' method='post'>Title: <input type = 'text' name = 'title'> \n\n Perspective: <input type ='text' name = 'text'>latitude: <input type ='text' name = 'latitude' value="+e.latlng.lat+">longitude: <input type ='text' name = 'longitude' value ="+e.latlng.lng+"> <input type = 'submit'></form>").openOn(map);
 
 // Goal: see action on clicking submit?????
     $("#form").submit(function(e){
