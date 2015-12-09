@@ -39,8 +39,8 @@ var perspectivesController = {
        else{
          console.log("success?")
          console.log(currentUser.perspectives)
-         newPerspective.create();
-       }
+         res.redirect("/")
+      }
      })
 
   },
