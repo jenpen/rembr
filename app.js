@@ -37,10 +37,10 @@ app.use(function (req, res, next) {
 
 app.listen(7812);
 
-// Perspective Routes 
+// Perspective Routes
 app.get("/", perspectivesController.index);
 app.get("/perspectives", perspectivesController.all);
-app.post("/perspectives", perspectivesController.create);
+app.post("/", perspectivesController.create);
 // app.delete("/user/:userId/perspectives/:id", perspectivesController.removeReminder);
 
 // User Routes
@@ -49,7 +49,7 @@ app.post("/signup", usersController.postSignup);
 app.get("/login", usersController.getLogin);
 app.post("/login", usersController.postLogin);
 app.get("/logout", usersController.getLogout);
-app.get("/users", usersController.index);
+// app.get("/users", usersController.index);
 
 function authenticatedUser(req, res, next) {
     // If the user is authenticated, then we continue the execution

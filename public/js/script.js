@@ -1,15 +1,7 @@
 $(document).ready(function(){
-  // User.fetchPerspectives().then(function(users){
-  //   User.all.forEach(function(users){
-  //     console.log(users)
-  // });
-  //   Perspective.fetch().then(function(perspectives){
-  //     console.log(perspectives)
-  //     })
-  // })
+
   Perspective.fetch().then(function(perspective){
     Perspective.all.forEach(function(perspective){
-      // L.marker([perspective.latitude, perspective.longitude]).addTo(map);
       console.log(perspective.latitude);
       L.mapbox.featureLayer({
         // this feature is in the GeoJSON format: see geojson.org for the full specification
@@ -50,15 +42,39 @@ $(document).ready(function(){
     popup
     .setLatLng(e.latlng)
     .setContent(
-      "<form action = '/perspectives' method='post'>Title: <input type = 'text' name = 'title'> \n\n Perspective: <input type ='text' name = 'text'>latitude: <input type ='text' name = 'latitude' value="+e.latlng.lat+">longitude: <input type ='text' name = 'longitude' value ="+e.latlng.lng+"> <input type = 'submit'></form>").openOn(map);
-//
-// // Goal: see action on clicking submit?????
-//     $("#form").submit(function(e){
-//       // e.preventDefault();
-//       console.log("please just submit");
-//       var date =$("#date").val();
-//       console.log(date);
-//     });
+      "<form action = '/' method='post'>Title: <input type = 'text' name = 'title'> \n\n Perspective: <input type ='text' name = 'text'>latitude: <input type ='text' name = 'latitude' value="+e.latlng.lat+">longitude: <input type ='text' name = 'longitude' value ="+e.latlng.lng+"> <input type = 'submit'></form>").openOn(map);
+
+    // $("form").submit(function(e){
+    //   Perspective.fetch().then(function(perspective){
+    //     Perspective.all.forEach(function(perspective){
+    //       // L.marker([perspective.latitude, perspective.longitude]).addTo(map);
+    //       console.log(perspective.latitude);
+    //       L.mapbox.featureLayer({
+    //         // this feature is in the GeoJSON format: see geojson.org for the full specification
+    //         type: 'Feature',
+    //         geometry: {
+    //           type: 'Point',
+    //           // coordinates here are in longitude, latitude order because x, y is the standard for GeoJSON and many formats
+    //           coordinates: [
+    //             perspective.longitude,
+    //             perspective.latitude
+    //           ]
+    //         },
+    //         properties: {
+    //           title: perspective.title,
+    //           description: perspective.text,
+    //           // one can customize markers by adding simplestyle properties
+    //           // https://www.mapbox.com/guides/an-open-platform/#simplestyle
+    //           'marker-size': 'large',
+    //           'marker-color': '#007399',
+    //           'marker-symbol': 'camera'
+    //         }
+    //       }).addTo(map);
+    //
+    //     });
+    //   });
+    //
+    // });
  }
 
     map.on('click', onMapClick);
