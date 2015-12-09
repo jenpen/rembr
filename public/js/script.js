@@ -20,7 +20,7 @@ $(document).ready(function(){
           // one can customize markers by adding simplestyle properties
           // https://www.mapbox.com/guides/an-open-platform/#simplestyle
           'marker-size': 'large',
-          'marker-color': '#007399',
+          'marker-color': '#FFA500',
           'marker-symbol': 'camera'
         }
       }).addTo(map);
