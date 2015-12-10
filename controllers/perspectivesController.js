@@ -11,7 +11,8 @@ var perspectivesController = {
   },
   index: function(req,res){
     perspective.find({},function(err, perspectives){
-      res.render("index",{perspectives: perspectives, api_key: api_key});
+      res.render("index",{perspectives: perspectives, api_key: api_key.api_key});
+      console.log(api_key.api_key)
     });
   },
   create: function(req,res){
@@ -34,6 +35,7 @@ var perspectivesController = {
         console.log(err);
       } else {
         console.log("Saved");
+        // console.log(api_key.api_key)
         res.redirect("/");
       }
     });
