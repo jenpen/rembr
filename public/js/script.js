@@ -31,7 +31,7 @@ $(document).ready(function(){
     popup
     .setLatLng(e.latlng)
     .setContent(
-      "<form action = '/' method='post'>Title: <input type = 'text' name = 'title'> Perspective: <input type ='text' name = 'text'>latitude: <input type ='text' name = 'latitude' value="+e.latlng.lat+">longitude: <input type ='text' name = 'longitude' value ="+e.latlng.lng+"> <input type = 'submit'></form>").openOn(map);
+      "<form action = '/' class='form-group' method='post'>Title: <input class='form-control' type = 'text' name = 'title'> Perspective: <input type ='text' class='form-control' name = 'text'>latitude: <input type ='text' name = 'latitude' value="+e.latlng.lat+">longitude: <input type ='text' name = 'longitude' value ="+e.latlng.lng+"> <input class='btn btn-default' id='link-color' type = 'submit'></form>").openOn(map);
   }
 
   if($('#logout').html()){
