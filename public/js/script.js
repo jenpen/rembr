@@ -15,8 +15,8 @@ $(document).ready(function(){
           ]
         },
         properties: {
-          title: perspective.title + " "+ perspective.user,
-          description: perspective.text + "<button class='deletePerspective' title=" + perspective.id + ">Delete</button>",
+          title: perspective.title,
+          description: perspective.text + "  <button class='deletePerspective btn btn-default button-padding'' title=" + perspective.id + ">Delete</button>",
           // one can customize markers by adding simplestyle properties
           // https://www.mapbox.com/guides/an-open-platform/#simplestyle
           'marker-size': 'small',
