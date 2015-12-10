@@ -11,9 +11,6 @@ var session      = require('express-session');
 var perspectivesController = require('./controllers/perspectivesController');
 var usersController = require('./controllers/usersController');
 
-
-app.set('port', (process.env.PORT || 7812));
-
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/rembr');
 
 // Middleware
@@ -38,7 +35,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.listen(('port'), function() {
+// Set Port
+var port = process.env.PORT || 7812;
+app.listen(port, function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
