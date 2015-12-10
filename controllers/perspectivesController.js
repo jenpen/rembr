@@ -11,7 +11,7 @@ var perspectivesController = {
   },
   index: function(req,res){
     perspective.find({},function(err, perspectives){
-      res.render("index",{perspectives: perspectives, api_key: api_key});
+      res.render("index", {perspectives: perspectives, key: api_key});
     });
   },
   create: function(req,res){
