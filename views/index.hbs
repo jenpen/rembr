@@ -2,8 +2,6 @@
 <html>
 <head>
 
-  <meta charset='utf-8' />
-  <title>R E M B R</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Script Links -->
@@ -16,22 +14,35 @@
   <!-- Stylesheets -->
   <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
-  <style>
-  h1{text-align: center;}
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:49px; bottom:0px; width:100%; height:auto; margin: 10px;}
-  </style>
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 
-
 <body>
-  <div class = "users"></div>
-  <div id="perspectives"></div>
-  <div id='map'></div>
+
+  <!-- <div class="container">
+    <div class="row flex-row">
+
+      <div class="col-md-3">
+          <div class="panel panel-default flex-col">
+         <div class="panel-heading">Title flex-col</div>
+         <div class="panel-body flex-grow">
+           <div id='map'></div>
+         </div>
+         <div class="panel-footer">Footer</div>
+         </div>
+      </div></div></div>     -->
+
+
+  <div class="col-md-12" id='map'></div>
+
   <script>
-    L.mapbox.accessToken =  '{{key.api_key}}'
-    var map = L.mapbox.map('map', 'mapbox.light')
-    .setView([38.91338, -77.03236], 12);
+  L.mapbox.accessToken =  '{{key.api_key}}'
+  var map = L.mapbox.map('map', 'mapbox.light', {zoomControl: false})
+  .setView([38.91338, -77.03236], 12);
+  new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+
   </script>
+
 </body>
 </html>

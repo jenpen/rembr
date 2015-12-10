@@ -34,12 +34,11 @@ var perspectivesController = {
         console.log(err);
       } else {
         console.log("Saved");
-        // console.log(api_key.api_key)
         res.redirect("/");
       }
     });
   },
-  
+
   all: function(req,res){
     perspective.find({}).populate("user", "email").then(function(perspective){
       res.json(perspective);

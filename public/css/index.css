@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  margin:0;
+  padding:0;
+}
+
+#map {
+  position:absolute;
+  top:49px; bottom:0px; width: 100%; height: auto;
+  margin: 10px;
+}

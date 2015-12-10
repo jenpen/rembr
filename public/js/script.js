@@ -18,9 +18,9 @@ $(document).ready(function(){
           description: perspective.text,
           // one can customize markers by adding simplestyle properties
           // https://www.mapbox.com/guides/an-open-platform/#simplestyle
-          'marker-size': 'medium',
+          'marker-size': 'small',
           'marker-color': '#FFA500',
-          'marker-symbol': 'camera'
+          'marker-symbol': 'marker-stroked'
         }
       }).addTo(map);
     });
