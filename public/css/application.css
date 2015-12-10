@@ -13,3 +13,10 @@
 .set-perspective-form {
   min-width: 200px;
 }
+textarea {
+   overflow: auto;
+}
+#perspective-input {
+  overflow: auto;
+  margin-bottom: inherit;
+}
