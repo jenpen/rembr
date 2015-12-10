@@ -34,6 +34,7 @@ var perspectivesController = {
         console.log(err);
       } else {
         console.log("Saved");
+        // console.log(api_key.api_key)
         res.redirect("/");
       }
     });
