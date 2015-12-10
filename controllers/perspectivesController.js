@@ -39,6 +39,7 @@ var perspectivesController = {
       }
     });
   },
+  
   all: function(req,res){
     perspective.find({}).populate("user", "email").then(function(perspective){
       res.json(perspective);
