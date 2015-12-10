@@ -1,10 +1,5 @@
 // require("../../env.js")
 $(document).ready(function(){
-
-  L.mapbox.accessToken = 'pk.eyJ1IjoibGV3aXMyYmEiLCJhIjoiY2loczEwYjE5MDBqdXRsbTFmNzR6Mm1rbyJ9.ypWiA8TKk_5Ar5Pp9Sq8fQ';
-  var map = L.mapbox.map('map', 'mapbox.light')
-  .setView([38.91338, -77.03236], 13);
-
   Perspective.fetch().then(function(perspective){
     Perspective.all.forEach(function(perspective){
       L.mapbox.featureLayer({
@@ -28,7 +23,6 @@ $(document).ready(function(){
           'marker-symbol': 'camera'
         }
       }).addTo(map);
-
     });
   });
 
