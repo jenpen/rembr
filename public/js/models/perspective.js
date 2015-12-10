@@ -9,7 +9,7 @@ var Perspective = function(info) {
 Perspective.all = [];
 
 Perspective.fetch = function(){
-  var url = "http://localhost:7812/perspectives";
+  var url = "/perspectives";
   var request = $.getJSON(url).then(function(response){
     for(var i = 0; i < response.length; i++){
       Perspective.all.push(new Perspective(response[i]));
@@ -23,7 +23,7 @@ Perspective.fetch = function(){
 
 Perspective.prototype = {
   create: function(){
-    var url = "http://localhost:7812/perspectives";
+    var url = "/perspectives";
     var request = $.getJSON(url).then(function(response){
       console.log(response);
     });
