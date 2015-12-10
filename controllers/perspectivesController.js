@@ -47,17 +47,21 @@ var perspectivesController = {
   },
 
   delete: function(req,res){
-    currentUser.perspectives.pull(req.body.id)
-    currentUser.save(function(err){
-      if(err){
-        console.log("err")
+    console.log("inside delete action")
+    //find the record given an id
+    console.log(req.params.id)
+    perspective.findOne({_id:req.params.id},function(err,doc){
+      if(!err){
+          doc.remove().then(function(){
+          console.log("no error, redirecting")
+          res.json({success: true})
+        })
       }
       else{
-        console.log("perspective deleted")
-        res.redirect('/')
+        console.log(err)
       }
     })
-  },
+    },
 
   all: function(req,res){
     perspective.find({}).populate("user", "email").then(function(perspective){

@@ -44,8 +44,8 @@ app.listen(port, function() {
 });
 
 // Perspective Routes
-app.delete("/perspectives/:id", perspectivesController.delete)
 app.get("/", perspectivesController.index);
+app.delete("/perspectives/:id", perspectivesController.delete)
 app.get("/perspectives", perspectivesController.all);
 app.post("/", perspectivesController.create);
 app.get("/perspectives/:id", perspectivesController.show)
