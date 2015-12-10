@@ -39,6 +39,26 @@ var perspectivesController = {
       }
     });
   },
+
+  show: function(req,res){
+    perspective.findById(req.params.id).then(function(perspective){
+      res.json(perspective)
+    })
+  },
+
+  delete: function(req,res){
+    currentUser.perspectives.pull(req.body.id)
+    currentUser.save(function(err){
+      if(err){
+        console.log("err")
+      }
+      else{
+        console.log("perspective deleted")
+        res.redirect('/')
+      }
+    })
+  },
+
   all: function(req,res){
     perspective.find({}).populate("user", "email").then(function(perspective){
       res.json(perspective);

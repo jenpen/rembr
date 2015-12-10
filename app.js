@@ -8,6 +8,7 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
+var methodOverride = require('method-override')
 var perspectivesController = require('./controllers/perspectivesController');
 var usersController = require('./controllers/usersController');
 
@@ -26,6 +27,7 @@ app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(methodOverride('_method'));
 
 require('./config/passport')(passport);
 
@@ -42,9 +44,11 @@ app.listen(port, function() {
 });
 
 // Perspective Routes
+app.delete("/perspectives/:id", perspectivesController.delete)
 app.get("/", perspectivesController.index);
 app.get("/perspectives", perspectivesController.all);
 app.post("/", perspectivesController.create);
+app.get("/perspectives/:id", perspectivesController.show)
 // app.delete("/user/:userId/perspectives/:id", perspectivesController.removeReminder);
 
 // User Routes

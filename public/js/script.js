@@ -14,8 +14,8 @@ $(document).ready(function(){
           ]
         },
         properties: {
-          title: perspective.title,
-          description: perspective.text,
+          title: perspective.title + " "+ perspective.user,
+          description: perspective.text + "<form method = 'post' action = '/perspectives/"+ perspective.id +"'><input type='hidden' name='_method' value='delete' /><input type='text' name='id' value ="+perspective.id+"><input class='btn btn-default' id='link-color' type='submit' name = 'delete' value = 'Delete'></form>",
           // one can customize markers by adding simplestyle properties
           // https://www.mapbox.com/guides/an-open-platform/#simplestyle
           'marker-size': 'medium',
@@ -25,6 +25,8 @@ $(document).ready(function(){
       }).addTo(map);
     });
   });
+
+
 
   var popup = L.popup();
   function onMapClick(e) {
