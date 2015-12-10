@@ -5,3 +5,11 @@
 #link-color:hover{
     color: #FFA500
   }
+
+#field_show_none {
+  display: none;
+}
+
+.set-perspective-form {
+  min-width: 200px;
+}
