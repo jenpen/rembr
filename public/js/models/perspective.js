@@ -4,6 +4,8 @@ var Perspective = function(info) {
   this.longitude = info.longitude;
   this.latitude = info.latitude;
   this.text = info.text;
+  this.id = info.id;
+  this.user = info.user;
 };
 
 Perspective.all = [];

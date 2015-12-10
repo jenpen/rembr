@@ -22,28 +22,51 @@ var perspectivesController = {
         text: req.body.text,
         latitude: req.body.latitude,
         longitude: req.body.longitude}));
-    currentUser.save(function(err){
-      if (!err){
-        console.log("Saved");
-      } else {
-        console.log(err);
-      }
-    });
-    newPerspective.save(function(err){
-      if(err){
-        console.log(err);
-      } else {
-        console.log("Saved");
-        res.redirect("/");
-      }
-    });
-  },
+        currentUser.save(function(err){
+          if (!err){
+            console.log("Saved");
+          } else {
+            console.log(err);
+          }
+        });
+        newPerspective.save(function(err){
+          if(err){
+            console.log(err);
+          } else {
+            console.log("Saved");
+            res.redirect("/");
+          }
+        });
+      },
 
-  all: function(req,res){
-    perspective.find({}).populate("user", "email").then(function(perspective){
-      res.json(perspective);
-    });
-  }
-};
+      show: function(req,res){
+        perspective.findById(req.params.id).then(function(perspective){
+          res.json(perspective);
+        });
+      },
 
-module.exports = perspectivesController;
+      delete: function(req,res){
+        console.log("inside delete action");
+        //find the record given an id
+        console.log(req.params.id);
+        perspective.findOne({_id:req.params.id},function(err,doc){
+          if(!err){
+            doc.remove().then(function(){
+              console.log("no error, redirecting");
+              res.json({success: true});
+            });
+          }
+          else{
+            console.log(err);
+          }
+        });
+      },
+
+      all: function(req,res){
+        perspective.find({}).populate("user", "email").then(function(perspective){
+          res.json(perspective);
+        });
+      }
+    };
+
+    module.exports = perspectivesController;
