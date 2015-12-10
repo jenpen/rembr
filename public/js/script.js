@@ -2,29 +2,40 @@
 $(document).ready(function(){
   Perspective.fetch().then(function(perspective){
     Perspective.all.forEach(function(perspective){
-      L.mapbox.featureLayer({
-        // this feature is in the GeoJSON format: see geojson.org for the full specification
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          // coordinates here are in longitude, latitude order because x, y is the standard for GeoJSON and many formats
-          coordinates: [
-            perspective.longitude,
-            perspective.latitude
-          ]
-        },
-        properties: {
-          title: perspective.title,
-          description: perspective.text,
-          // one can customize markers by adding simplestyle properties
-          // https://www.mapbox.com/guides/an-open-platform/#simplestyle
-          'marker-size': 'small',
-          'marker-color': '#FFA500',
-          'marker-symbol': 'marker-stroked'
-        }
-      }).addTo(map);
+
+        L.mapbox.featureLayer({
+          // this feature is in the GeoJSON format: see geojson.org for the full specification
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            // coordinates here are in longitude, latitude order because x, y is the standard for GeoJSON and many formats
+            coordinates: [
+              perspective.longitude,
+              perspective.latitude
+            ]
+          },
+          properties: {
+            title: perspective.title + " "+ perspective.user,
+            description: perspective.text + "<button class='deletePerspective' title=" + perspective.id + ">Delete</button>",
+            // one can customize markers by adding simplestyle properties
+            // https://www.mapbox.com/guides/an-open-platform/#simplestyle
+            'marker-size': 'small',
+            'marker-color': '#FFA500',
+            'marker-symbol': 'marker-stroked'
+          }
+        }).addTo(map);
+      });
     });
-  });
+
+    $("#map").on("click", ".deletePerspective", function(e){
+      var perspectiveId = this.title;
+      $.ajax({
+        url: "./perspectives/" + perspectiveId,
+        method: "DELETE"
+      }).then(function(response){
+        location.reload();
+      });
+    });
 
   var popup = L.popup();
   function onMapClick(e) {
@@ -37,5 +48,4 @@ $(document).ready(function(){
   if($('#logout').html()){
     map.on('click', onMapClick);
     }
-
   });
