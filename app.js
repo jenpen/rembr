@@ -11,6 +11,9 @@ var session      = require('express-session');
 var perspectivesController = require('./controllers/perspectivesController');
 var usersController = require('./controllers/usersController');
 
+
+app.set('port', (process.env.PORT || 7812));
+
 mongoose.connect('mongodb://localhost/rembr');
 
 // Middleware
@@ -35,9 +38,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-
-app.listen(7812, function(){
-  console.log("*** Listening on Port 7812 ***")
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
 
 // Perspective Routes
