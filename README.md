@@ -5,7 +5,7 @@ Users can post and view perspectives based on a location.
 Have you ever stood somewhere and wondered who else had been there? What had they thought as they stood there? Rembr gives you insight into who's been where you are.
 
 ##Trello
-Follow our project development on [Trello](https://trello.com/b/nT3OJqwE)
+Follow our project development on [Trello](https://trello.com/b/nT3OJqwE).
 
 ##Technologies Used
 * [Node.js](https://nodejs.org/en/)
@@ -23,8 +23,8 @@ Follow our project development on [Trello](https://trello.com/b/nT3OJqwE)
 * From within the directory, run NPM install to download all required dependencies. A full list can be viewed in the package.json file.
 * Optional: seed the database.
 * Sign up for [mapbox](https://www.mapbox.com/) and register for an access token.
-** This access token will need to be included in an env.js file.
-** The env.js file should be saved to the root directory.
+ - This access token will need to be included in an env.js file.
+ - The env.js file should be saved to the root directory.
 
 ##Unsolved Problems
 * Editing and deleting perspectives
