@@ -14,7 +14,7 @@ var usersController = require('./controllers/usersController');
 
 app.set('port', (process.env.PORT || 7812));
 
-mongoose.connect('mongodb://localhost/rembr');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/rembr');
 
 // Middleware
 app.use(morgan('dev'));
@@ -38,7 +38,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.listen(app.get('port'), function() {
+app.listen(('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 

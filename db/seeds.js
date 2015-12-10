@@ -1,6 +1,6 @@
 require("./schema");
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/rembr");
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/rembr');
 var UserModel = require("../models/user");
 var PerspectiveModel = require("../models/perspective");
 
