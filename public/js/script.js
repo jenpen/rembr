@@ -2,7 +2,6 @@ $(document).ready(function(){
   // if (currentUser)
   Perspective.fetch().then(function(perspective){
     Perspective.all.forEach(function(perspective){
-      console.log(perspective.latitude);
       L.mapbox.featureLayer({
         // this feature is in the GeoJSON format: see geojson.org for the full specification
         type: 'Feature',
