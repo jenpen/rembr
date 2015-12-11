@@ -27,6 +27,7 @@ Follow our project development on [Trello](https://trello.com/b/nT3OJqwE).
  - The env.js file should be saved to the root directory.
 
 ##Unsolved Problems
+* Need to get the map into the script.js file
 * Editing and deleting perspectives
 * How to prioritize navbar over map in mobile view
 * How to add username to Passport local auth

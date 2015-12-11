@@ -1,21 +1,22 @@
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<!-- Map does not display properly without its own head and body section. Need to figure how to make this happen. -->
 
+<head>
   <!-- Script Links -->
   <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
   <script src='../js/script.js'></script>
   <script src='js/models/perspective.js'></script>
 
   <!-- Stylesheets -->
   <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' property='stylesheet'/>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' property="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="./css/index.css">
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' property='stylesheet' />
+  <link rel='stylesheet' type='text/css' href='./css/bootstrap.min.css'>
+  <link rel='stylesheet' type='text/css' href='./css/index.css'>
 </head>
 
 <body>
-  <div class="col-md-12" id='map'></div>
+  <div class='col-md-12' id='map'></div>
 
   <script>
   L.mapbox.accessToken =  '{{key.api_key}}'
@@ -24,3 +25,4 @@
   new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
   </script>
+</body>
