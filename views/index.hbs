@@ -19,10 +19,15 @@
   <div class='col-md-12' id='map'></div>
 
   <script>
+
+
+
   L.mapbox.accessToken =  '{{key.api_key}}'
   var map = L.mapbox.map('map', 'mapbox.light', {zoomControl: false})
   .setView([38.91338, -77.03236], 12);
   new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+
+
 
   </script>
 </body>

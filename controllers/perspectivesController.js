@@ -46,13 +46,10 @@ var perspectivesController = {
       },
 
       delete: function(req,res){
-        console.log("inside delete action");
         //find the record given an id
-        console.log(req.params.id);
-        perspective.findOne({_id:req.params.id},function(err,doc){
+        perspective.findOne({_id:req.params.id},function(err,p){
           if(!err){
-            doc.remove().then(function(){
-              console.log("no error, redirecting");
+            p.remove().then(function(){
               res.json({success: true});
             });
           }
