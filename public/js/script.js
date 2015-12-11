@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-  document.getElementById('hidden-links').style.visibility = 'hidden';
-
   map.locate();
   map.on('locationfound', function(e) {
     map.setView([e.latlng.lat, e.latlng.lng], 13);
@@ -24,7 +22,7 @@ $(document).ready(function(){
         },
         properties: {
           title: perspective.title,
-          description: perspective.text + "  <button class='deletePerspective btn btn-default button-padding'' title=" + perspective.id + ">Delete</button>",
+          description: perspective.text + "  <button class='deletePerspective btn btn-default button-padding' id='link-color' title=" + perspective.id + ">Delete</button>",
           // one can customize markers by adding simplestyle properties
           // https://www.mapbox.com/guides/an-open-platform/#simplestyle
           'marker-size': 'small',

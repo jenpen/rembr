@@ -1,6 +1,6 @@
 <!-- Map does not display properly without its own head and body section. Need to figure how to make this happen. -->
 
-<div id='hidden-links'>
+<head>
   <!-- Script Links -->
   <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
   <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
@@ -13,8 +13,9 @@
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' property='stylesheet' />
   <link rel='stylesheet' type='text/css' href='./css/bootstrap.min.css'>
   <link rel='stylesheet' type='text/css' href='./css/index.css'>
-</div>
+</head>
 
+<body>
   <div class='col-md-12' id='map'></div>
 
   <script>
@@ -26,6 +27,7 @@
   .setView([38.91338, -77.03236], 12);
   new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
-  
+
 
   </script>
+</body>
