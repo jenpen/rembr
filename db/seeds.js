@@ -54,7 +54,7 @@ var spec3 = new PerspectiveModel({
 var spec4 = new PerspectiveModel({
   title: "Secret Subway",
   latitude: 38.88993024107559,
-  longitude: 77.00905323028564,
+  longitude: -77.00905323028564,
   text: "Saw a rare thing today - the United States Capitol has its own underground subway line that connects the Capitol to the House and Senate office buildings."
 });
 

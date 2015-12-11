@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Script Links -->
@@ -12,28 +8,13 @@
   <script src='js/models/perspective.js'></script>
 
   <!-- Stylesheets -->
-  <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
+  <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' property='stylesheet'/>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' property="stylesheet" />
   <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 
 <body>
-
-  <!-- <div class="container">
-    <div class="row flex-row">
-
-      <div class="col-md-3">
-          <div class="panel panel-default flex-col">
-         <div class="panel-heading">Title flex-col</div>
-         <div class="panel-body flex-grow">
-           <div id='map'></div>
-         </div>
-         <div class="panel-footer">Footer</div>
-         </div>
-      </div></div></div>     -->
-
-
   <div class="col-md-12" id='map'></div>
 
   <script>
@@ -43,6 +24,3 @@
   new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
   </script>
-
-</body>
-</html>
