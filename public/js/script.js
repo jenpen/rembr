@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  document.getElementById('hidden-links').style.visibility = 'hidden';
+
   map.locate();
   map.on('locationfound', function(e) {
     map.setView([e.latlng.lat, e.latlng.lng], 13);
