@@ -10,21 +10,29 @@ Have you ever stood somewhere and wondered who else had been there? What had the
 
 ##Demonstrating your app
 * What are the coolest features of your app?
- - Coolest feature is the form with create function.
+ - Form with create function.
 
 ##Demonstrating your code
 * What was the most difficult part?
- - form with create function
+ - Form with create function
+ - Exploring all the options for map to push down/appear behind the navbar in truncated window display.
 * What did you learn?
- - Mapbox, modals, what doesn't work
+ - Mapbox
+ - Modals
+ - Troubleshooting
+ - Hiding the 
 * What are you most proud of?
  - Way we all worked together, great starting point for a great idea
+ - Form with the create function
+ - Modals
+ - Geolocation
 
 ##The planning process
 * How did you arrive at this idea?
  - It was an idea that Kelly had been playing with before and felt like a good fit for this projects requirements.
 * How did you decide who would have which responsibilities?
- - Arrived at it organically.
+ - Arrived at responsibilities organically
+ - Kept the conversation going
 * What would you change about your planning process?
  - Not much! Worked really well together and got alot of the planning out of the way upfront.
  - Kept up with our benchmarks if not the due dates we set.
