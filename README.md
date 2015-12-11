@@ -13,6 +13,7 @@ Follow our project development on [Trello](https://trello.com/b/nT3OJqwE).
 * [MongoDB](https://www.mongodb.com/)
 * [Heroku](https://dashboard.heroku.com/apps)
 * [Mapbox](https://www.mapbox.com/)
+* [Leaflet](http://leafletjs.com/)
 * jQuery and JavaScript
 * good 'ole pen and paper.
 
@@ -28,16 +29,18 @@ Follow our project development on [Trello](https://trello.com/b/nT3OJqwE).
 
 ##Unsolved Problems
 * Need to get the map into the script.js file
-* Editing and deleting perspectives
+* Editing perspectives
 * How to have mobile nav bar overlay on map
 * How to add username to Passport local auth
 * How to display username in Perspective
+* Move map and perspective functionality to the front-end
 
 ##Coming Features
 * User profile pages
 * Favorite perspectives
 * Tag other users in Perspective
 * Delete user profile
+* Upload photos and videos for perspective location
 
 ##Contact information
 Create an issue on this repo with any questions.
