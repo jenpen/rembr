@@ -1,4 +1,4 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
 
@@ -12,7 +12,7 @@ var PerspectiveSchema = new Schema (
     latitude: Number,
     date: { type: Date, default: Date.now },
     text: String,
-    user: {type: ObjectId, ref: "User"}
+    user: {type: ObjectId, ref: 'User'}
   },
   {
     toObject: {virtuals: true},
@@ -20,4 +20,4 @@ var PerspectiveSchema = new Schema (
   }
 );
 
-var PerspectiveModel = mongoose.model("Perspective", PerspectiveSchema);
+var PerspectiveModel = mongoose.model('Perspective', PerspectiveSchema);

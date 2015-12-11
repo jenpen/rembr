@@ -29,7 +29,7 @@ Follow our project development on [Trello](https://trello.com/b/nT3OJqwE).
 ##Unsolved Problems
 * Need to get the map into the script.js file
 * Editing and deleting perspectives
-* How to prioritize navbar over map in mobile view
+* How to have mobile nav bar overlay on map
 * How to add username to Passport local auth
 * How to display username in Perspective
 

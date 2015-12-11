@@ -1,8 +1,8 @@
-require("./schema");
-var mongoose = require("mongoose");
+require('./schema');
+var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/rembr');
-var UserModel = require("../models/user");
-var PerspectiveModel = require("../models/perspective");
+var UserModel = require('../models/user');
+var PerspectiveModel = require('../models/perspective');
 
 // Remove all seed data
 UserModel.remove({}, function(err){
@@ -15,17 +15,17 @@ PerspectiveModel.remove({}, function(err){
 // User Seed Data
 var forrest = new UserModel({
   local:{
-    email: "forrest@gump.com",
-    password: "oneoneone",
-    username: "forestforestgump"
+    email: 'forrest@gump.com',
+    password: 'oneoneone',
+    username: 'forestforestgump'
   }}
 );
 
 var dan = new UserModel({
   local:{
-    email: "lieutenant@dan.com",
-    password: "oneoneone",
-    username: "dan_the_nam_man"
+    email: 'lieutenant@dan.com',
+    password: 'oneoneone',
+    username: 'dan_the_nam_man'
   }}
 );
 
@@ -113,7 +113,7 @@ for(var i = 0; i < users.length; i++) {
     if (err){
       console.log(err);
     } else {
-      console.log("user was saved");
+      console.log('user was saved');
     }
   })
 }

@@ -8,7 +8,7 @@ var ObjectId = Schema.Types.ObjectId;
     email        : String,
     password     : String,
     username     : String,
-    perspectives: [{type: ObjectId, ref: "Perspective"}]
+    perspectives: [{type: ObjectId, ref: 'Perspective'}]
   }
 });
 

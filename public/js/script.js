@@ -1,4 +1,3 @@
-// require("../../env.js")
 $(document).ready(function(){
 
   map.locate();
@@ -34,11 +33,11 @@ $(document).ready(function(){
     });
     if($('#logout').html()){
 
-    $("#map").on("click", ".deletePerspective", function(e){
+    $('#map').on('click', '.deletePerspective', function(e){
       var perspectiveId = this.title;
       $.ajax({
-        url: "./perspectives/" + perspectiveId,
-        method: "DELETE"
+        url: './perspectives/' + perspectiveId,
+        method: 'DELETE'
       }).then(function(response){
         location.reload();
       });

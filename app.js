@@ -8,7 +8,7 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
-var methodOverride = require('method-override')
+var methodOverride = require('method-override');
 var perspectivesController = require('./controllers/perspectivesController');
 var usersController = require('./controllers/usersController');
 

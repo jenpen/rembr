@@ -1,4 +1,4 @@
-var Perspective = require("../public/js/models/perspective");
+var Perspective = require('../public/js/models/perspective');
 
 describe ("A perspective", function(){
 // DRY code changes
@@ -32,14 +32,6 @@ describe ("A perspective", function(){
 
   });
 });
-
-
-
-
-
-
-
-
 
 // How to do asychronous stuff
 //
