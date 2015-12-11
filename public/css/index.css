@@ -9,6 +9,9 @@ body {
 
 #map {
   position:absolute;
-  top:49px; bottom:0px; width: 100%; height: auto;
-  margin: 10px;
+  top:47px;
+  bottom:0px;
+  width: 100%;
+  height: auto;
+  margin: 7px;
 }
