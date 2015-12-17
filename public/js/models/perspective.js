@@ -23,11 +23,13 @@ Perspective.fetch = function(){
   return request;
 };
 
+//  NHO: Do we ever use this method?
 Perspective.prototype = {
   create: function(){
     var url = '/perspectives';
     var request = $.getJSON(url).then(function(response){
       console.log(response);
+      // NHO: what do we want to do with this response?
     });
   }
 };

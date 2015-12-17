@@ -21,7 +21,7 @@ Follow our project development on [Trello](https://trello.com/b/nT3OJqwE).
 ##Install
 * If you have not installed [node.js](https://nodejs.org/en/), do so before proceeding.
 * Fork and clone, or directly clone this repo.
-* From within the directory, run NPM install to download all required dependencies. A full list can be viewed in the package.json file.
+* From within the directory, run `npm install` to download all required dependencies. A full list can be viewed in the package.json file.
 * Optional: seed the database.
 * Sign up for [mapbox](https://www.mapbox.com/) and register for an access token.
  - This access token will need to be included in an env.js file.
