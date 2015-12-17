@@ -17,6 +17,7 @@ var perspectivesController = {
   create: function(req,res){
     var currentUser = req.user.local;
     currentUser.perspectives.push(
+      // NHO: Can we namespace this response into a more absract object, so we can just pass in that object, rather than each individual key-value? 
       newPerspective = new perspective({
         title: req.body.title,
         text: req.body.text,
