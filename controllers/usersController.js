@@ -43,3 +43,4 @@ var usersController = {
 };
 
 module.exports = usersController;
+// NHO: Nice, clean, well commented code!

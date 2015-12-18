@@ -3,6 +3,8 @@ var bcrypt   = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
+// NHO: Feel like organizationally this block should go in the shchema...
+// NHO: How would you implement another field on a local user such as username?
   var User = mongoose.Schema({
   local : {
     email        : String,

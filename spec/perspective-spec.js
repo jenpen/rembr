@@ -1,3 +1,4 @@
+// NHO: TESTS! WOOHOO!
 var Perspective = require('../public/js/models/perspective');
 
 describe ("A perspective", function(){
@@ -32,6 +33,9 @@ describe ("A perspective", function(){
 
   });
 });
+
+// NHO: I like that you made notes, but consider removing them for production...
+
 
 // How to do asychronous stuff
 //
